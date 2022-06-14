@@ -26,13 +26,17 @@ public class Player : MonoBehaviour
     }
     private void MovePlayer()
     {
-        var deltaX = Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed; //makes movement framerate independent
+        //Time.deltaTime makes movement framerate independent
+        //Horizontal = A D right and left
+        var deltaX = Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed; 
+        //Vertical = W S up and down arrows
         var deltaY = Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed;
-        var newXPos = Mathf.Clamp(transform.position.x + deltaX, xMin, xMax);
-        var newYPos = Mathf.Clamp(transform.position.y + deltaY, yMin, yMax);
-        transform.position = new Vector2(newXPos, newYPos);
+        var newXPosition = Mathf.Clamp(transform.position.x + deltaX, xMin, xMax);
+        var newYPosition = Mathf.Clamp(transform.position.y + deltaY, yMin, yMax);
+        transform.position = new Vector2(newXPosition, newYPosition);
     }
 
+    //Makes so player can't move off screen. Possibly change
     private void SetBounds()
     {
         Camera gameCamera = Camera.main;
