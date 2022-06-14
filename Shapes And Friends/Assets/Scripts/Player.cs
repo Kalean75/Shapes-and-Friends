@@ -13,14 +13,55 @@ public class Player : MonoBehaviour
     float yMin;
     float yMax;
 
+    float attractionID;
+
+    SpriteRenderer playerSprite;
+    //The Color to be assigned to the Renderer’s Material
+    //Color m_NewColor;
+
+    //These are the values that the Color Sliders return
+    //float m_Red, m_Blue, m_Green;
+
     // Start is called before the first frame update
     void Start()
-    {
-        SetBounds();
-    }
+	{
+		SetRandomColor();
+		SetBounds();
+	}
 
-    // Update is called once per frame
-    void Update()
+	private void SetRandomColor()
+	{
+		int randomNum = Random.Range(1, 6);
+		playerSprite = GetComponent<SpriteRenderer>();
+		//Set the GameObject's Color quickly to a set Color (blue)
+		switch (randomNum)
+		{
+			case 1:
+				playerSprite.color = Color.red;
+				break;
+			case 2:
+				playerSprite.color = Color.green;
+				break;
+			case 3:
+				playerSprite.color = Color.blue;
+				break;
+			case 4:
+				playerSprite.color = Color.cyan;
+				break;
+			case 5:
+				playerSprite.color = Color.yellow;
+				break;
+			case 6:
+				playerSprite.color = Color.magenta;
+				break;
+			default:
+				playerSprite.color = Color.black;
+				break;
+		}
+	}
+
+	// Update is called once per frame
+	void Update()
     {
         MovePlayer();
     }
