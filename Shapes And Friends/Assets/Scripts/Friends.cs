@@ -5,6 +5,7 @@ using UnityEngine;
 public class Friends : MonoBehaviour
 {
 	[Header("Friend")]
+	//serializeField makes the value editable within unity if clicking on object
 	[SerializeField] float friendSpeed = 10f;
 	SpriteRenderer friendSprite;
 	int attractionId;
@@ -21,7 +22,7 @@ public class Friends : MonoBehaviour
 		SetRandomColor();
     }
 
-	//gets a random number between 1 and 6 and sets color based on that
+	//gets a random number between 1 and 6 and sets color based on number
 	private void SetRandomColor()
 	{
 		int randomNum = Random.Range(1, 6);
