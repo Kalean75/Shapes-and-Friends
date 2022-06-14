@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     float yMin;
     float yMax;
 
-    float attractionID;
+    int attractionID;
 
     SpriteRenderer playerSprite;
     //The Color to be assigned to the Renderer’s Material
@@ -28,42 +28,12 @@ public class Player : MonoBehaviour
 		SetRandomColor();
 		SetBounds();
 	}
-
-	private void SetRandomColor()
-	{
-		int randomNum = Random.Range(1, 6);
-		playerSprite = GetComponent<SpriteRenderer>();
-		//Set the GameObject's Color quickly to a set Color (blue)
-		switch (randomNum)
-		{
-			case 1:
-				playerSprite.color = Color.red;
-				break;
-			case 2:
-				playerSprite.color = Color.green;
-				break;
-			case 3:
-				playerSprite.color = Color.blue;
-				break;
-			case 4:
-				playerSprite.color = Color.cyan;
-				break;
-			case 5:
-				playerSprite.color = Color.yellow;
-				break;
-			case 6:
-				playerSprite.color = Color.magenta;
-				break;
-			default:
-				playerSprite.color = Color.black;
-				break;
-		}
-	}
-
 	// Update is called once per frame
 	void Update()
     {
         MovePlayer();
+        //I put this here for shits and giggles. Remove it.
+        SetRandomColor();
     }
     private void MovePlayer()
     {
@@ -86,4 +56,36 @@ public class Player : MonoBehaviour
         yMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).y + padding;
         yMax = gameCamera.ViewportToWorldPoint(new Vector3(0, 1, 0)).y - padding;
     }
+
+    private void SetRandomColor()
+    {
+        int randomNum = Random.Range(1, 6);
+        playerSprite = GetComponent<SpriteRenderer>();
+        //Set the GameObject's Color quickly to a set Color (blue)
+        switch (randomNum)
+        {
+            case 1:
+                playerSprite.color = Color.red;
+                break;
+            case 2:
+                playerSprite.color = Color.green;
+                break;
+            case 3:
+                playerSprite.color = Color.blue;
+                break;
+            case 4:
+                playerSprite.color = Color.cyan;
+                break;
+            case 5:
+                playerSprite.color = Color.yellow;
+                break;
+            case 6:
+                playerSprite.color = Color.magenta;
+                break;
+            default:
+                playerSprite.color = Color.black;
+                break;
+        }
+    }
+
 }
