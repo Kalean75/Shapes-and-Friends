@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
 	float yMin;
 	float yMax;
 
+	int numberOfFriends;
+
 	public int attractionID = 0;
 
 	SpriteRenderer playerSprite;
