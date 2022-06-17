@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   friendSpeed: 5
+  fickleFriendTimer: 10
 --- !u!58 &587895308569183185
 CircleCollider2D:
   m_ObjectHideFlags: 0

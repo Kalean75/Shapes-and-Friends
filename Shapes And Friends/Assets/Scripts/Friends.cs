@@ -5,6 +5,9 @@ public class Friends : MonoBehaviour
 	[Header("Friend")]
 	//serializeField makes the value editable within unity if clicking on object
 	[SerializeField] float friendSpeed = 5f;
+	[SerializeField] float fickleFriendTimerMax = 10f;
+	[SerializeField] float fickleFriendTimerMin = 1f;
+	float fickleFriendTimer;
 	int attractionID;
 	SpriteRenderer friendSprite;
 	int playerAttractionId;
@@ -20,6 +23,7 @@ public class Friends : MonoBehaviour
 	{
 		//SetRandomColor();
 		colorID = Random.Range(1, 6);
+		fickleFriendTimer = Random.Range(fickleFriendTimerMin, fickleFriendTimerMax);
 
 	}
 
@@ -33,15 +37,25 @@ public class Friends : MonoBehaviour
 	{
 		if (following)
 		{
-			Vector2 newPos = Vector2.MoveTowards(transform.position , GameObject.FindGameObjectWithTag("Player").transform.position, friendSpeed * Time.deltaTime);
-			transform.position = newPos;
+			if (fickleFriendTimer <= 0)
+			{
+				//temp change later
+				transform.position += new Vector3(-friendSpeed * Time.deltaTime, 0);
+				//transform.position += transform.forward * Time.deltaTime * friendSpeed;
+			}
+			else
+			{
+				Vector2 newPos = Vector2.MoveTowards(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position, friendSpeed * Time.deltaTime);
+				transform.position = newPos;
+				fickleFriendTimer -= Time.deltaTime;
+			}
 		}
-		if(repel)
+		else if(repel)
 		{
 			Vector2 newPos = Vector2.MoveTowards(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position, -friendSpeed * Time.deltaTime);
 			transform.position = newPos;
 		}
-		else if(!repel && !following)
+		if (!repel && !following)
 		{
 			transform.position += new Vector3(-friendSpeed * Time.deltaTime, 0);
 		}
