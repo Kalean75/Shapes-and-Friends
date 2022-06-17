@@ -33,7 +33,12 @@ public class Friends : MonoBehaviour
 	{
 		if (following)
 		{
-			Vector2 newPos = Vector2.MoveTowards(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position, friendSpeed * Time.deltaTime);
+			Vector2 newPos = Vector2.MoveTowards(transform.position , GameObject.FindGameObjectWithTag("Player").transform.position, friendSpeed * Time.deltaTime);
+			transform.position = newPos;
+		}
+		if(repel)
+		{
+			Vector2 newPos = Vector2.MoveTowards(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position, -friendSpeed * Time.deltaTime);
 			transform.position = newPos;
 		}
 	}
@@ -53,10 +58,10 @@ public class Friends : MonoBehaviour
 			{
 				following = true;
 			}
-			/*else if (this.attractionID != playerAttractionId)
+			else if (this.attractionID != playerAttractionId)
 			{
 				repel = true;
-			}*/
+			}
 		}
 	}
 
