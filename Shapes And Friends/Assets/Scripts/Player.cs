@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
 	float yMin;
 	float yMax;
 
-	int numberOfFriends;
+	//public int numberOfFriends = 0;
 
 	public int attractionID = 0;
 

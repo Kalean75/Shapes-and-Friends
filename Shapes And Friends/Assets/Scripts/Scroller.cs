@@ -16,9 +16,9 @@ public class Scroller : MonoBehaviour
 		//Add renderer to background
 		transform.position += new Vector3(-scrollSpeed * Time.deltaTime, 0);
 
-		if (transform.position.x < -21.5)
+		if (transform.position.x < -10)
 		{
-			transform.position = new Vector3(21.5f, transform.position.y);
+			transform.position = new Vector3(10f, transform.position.y);
 		}
 	}
 }

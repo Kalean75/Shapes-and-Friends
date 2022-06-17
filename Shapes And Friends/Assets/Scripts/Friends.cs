@@ -4,14 +4,16 @@ public class Friends : MonoBehaviour
 {
 	[Header("Friend")]
 	//serializeField makes the value editable within unity if clicking on object
-	[SerializeField] float friendSpeed = 10f;
+	[SerializeField] float friendSpeed = 5f;
 	int attractionID;
 	SpriteRenderer friendSprite;
 	int playerAttractionId;
-	Vector2 playerPosition;
+	//Vector2 playerPosition;
 	bool following = false;
+
 	//used to determine color
 	int colorID;
+
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -23,12 +25,18 @@ public class Friends : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (following == true)
+		moveFriend();
+	}
+
+	private void moveFriend()
+	{
+		Vector2 force = GameObject.FindGameObjectWithTag("Player").transform.position;
+		if (following)
 		{
-			//Debug.Log("Position " + GameObject.FindGameObjectWithTag("Player").transform.position);
+			//playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+			//transform.position = playerPosition;
 			var newXPosition = GameObject.FindGameObjectWithTag("Player").transform.position.x;
 			var newYPosition = GameObject.FindGameObjectWithTag("Player").transform.position.y - 1;
-
 			transform.position = new Vector2(newXPosition, newYPosition);
 		}
 	}
@@ -36,23 +44,26 @@ public class Friends : MonoBehaviour
 	//triggers when player enters trigger area
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		Debug.Log("triggered");
+		if(collision.transform.gameObject.tag == "Player")
+		{
+
 		//set color on approach
 		SetRandomColor();
 		//access player script to get public variables
 		playerAttractionId = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().attractionID;
-		Debug.Log("Player attraction Id " + playerAttractionId);
-//Debug.Log("player attr id " + playerAttractionId);
-Debug.Log("friend attr id " + this. attractionID);
 
-			if (this.attractionID == playerAttractionId)
-			{
-				following = true;
-			}
-			else
-			{
+		if (this.attractionID == playerAttractionId && !following)
+		{
+			following = true;
+		}
+		else
+		{
+				var force = transform.position - collision.transform.position;
 
+				force.Normalize();
+				GetComponent<Rigidbody2D>().AddForce(force * friendSpeed, ForceMode2D.Impulse);
 			}
+		}
 	}
 
 	//gets a random number between 1 and 6 and sets color based on number
