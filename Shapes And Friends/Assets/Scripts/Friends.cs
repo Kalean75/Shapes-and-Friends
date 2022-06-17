@@ -41,6 +41,10 @@ public class Friends : MonoBehaviour
 			Vector2 newPos = Vector2.MoveTowards(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position, -friendSpeed * Time.deltaTime);
 			transform.position = newPos;
 		}
+		else if(!repel && !following)
+		{
+			transform.position += new Vector3(-friendSpeed * Time.deltaTime, 0);
+		}
 	}
 
 	//triggers when player enters trigger area
