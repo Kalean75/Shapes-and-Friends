@@ -1709,13 +1709,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: CosmosTestBG
       objectReference: {fileID: 0}
+    - target: {fileID: 3437060992652300517, guid: 021ecf9a1299526468c66e6850b832fb, type: 3}
+      propertyPath: m_DrawMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3437060992652300522, guid: 021ecf9a1299526468c66e6850b832fb, type: 3}
       propertyPath: m_RootOrder
       value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 3437060992652300522, guid: 021ecf9a1299526468c66e6850b832fb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.0725806
+      objectReference: {fileID: 0}
+    - target: {fileID: 3437060992652300522, guid: 021ecf9a1299526468c66e6850b832fb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0721
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: 3437060992652300522, guid: 021ecf9a1299526468c66e6850b832fb, type: 3}
       propertyPath: m_LocalPosition.y
