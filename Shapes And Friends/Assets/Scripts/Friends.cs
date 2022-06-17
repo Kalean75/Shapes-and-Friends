@@ -10,6 +10,7 @@ public class Friends : MonoBehaviour
 	int playerAttractionId;
 	//Vector2 playerPosition;
 	bool following = false;
+	bool repel = false;
 
 	//used to determine color
 	int colorID;
@@ -30,39 +31,32 @@ public class Friends : MonoBehaviour
 
 	private void moveFriend()
 	{
-		Vector2 force = GameObject.FindGameObjectWithTag("Player").transform.position;
 		if (following)
 		{
-			//playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
-			//transform.position = playerPosition;
-			var newXPosition = GameObject.FindGameObjectWithTag("Player").transform.position.x;
-			var newYPosition = GameObject.FindGameObjectWithTag("Player").transform.position.y - 1;
-			transform.position = new Vector2(newXPosition, newYPosition);
+			Vector2 newPos = Vector2.MoveTowards(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position, friendSpeed * Time.deltaTime);
+			transform.position = newPos;
 		}
 	}
 
 	//triggers when player enters trigger area
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		if(collision.transform.gameObject.tag == "Player")
+		if (collision.transform.gameObject.tag == "Player")
 		{
 
-		//set color on approach
-		SetRandomColor();
-		//access player script to get public variables
-		playerAttractionId = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().attractionID;
+			//set color on approach
+			SetRandomColor();
+			//access player script to get public variables
+			playerAttractionId = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().attractionID;
 
-		if (this.attractionID == playerAttractionId && !following)
-		{
-			following = true;
-		}
-		else
-		{
-				var force = transform.position - collision.transform.position;
-
-				force.Normalize();
-				GetComponent<Rigidbody2D>().AddForce(force * friendSpeed, ForceMode2D.Impulse);
+			if (this.attractionID == playerAttractionId)
+			{
+				following = true;
 			}
+			/*else if (this.attractionID != playerAttractionId)
+			{
+				repel = true;
+			}*/
 		}
 	}
 
