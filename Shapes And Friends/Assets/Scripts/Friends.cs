@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Friends : MonoBehaviour
@@ -5,12 +6,14 @@ public class Friends : MonoBehaviour
 	[Header("Friend")]
 	//serializeField makes the value editable within unity if clicking on object
 	[SerializeField] float friendSpeed = 5f;
+	[Header("Leave timer elements")]
 	[SerializeField] float fickleFriendTimerMax = 10f;
 	[SerializeField] float fickleFriendTimerMin = 1f;
+	[Header("Colors")]
+	[SerializeField] List<Color> colors = new List<Color>();
 	float fickleFriendTimer;
 	int attractionID;
 	SpriteRenderer friendSprite;
-	int playerAttractionId;
 	//Vector2 playerPosition;
 	bool following = false;
 	bool repel = false;
@@ -22,7 +25,7 @@ public class Friends : MonoBehaviour
 	void Start()
 	{
 		//SetRandomColor();
-		colorID = Random.Range(1, 6);
+		colorID = Random.Range(0, colors.Count - 1);
 		fickleFriendTimer = Random.Range(fickleFriendTimerMin, fickleFriendTimerMax);
 
 	}
@@ -70,7 +73,7 @@ public class Friends : MonoBehaviour
 			//set color on approach
 			SetRandomColor();
 			//access player script to get public variables
-			playerAttractionId = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().attractionID;
+			int playerAttractionId = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().attractionID;
 
 			if (this.attractionID == playerAttractionId)
 			{
@@ -87,8 +90,10 @@ public class Friends : MonoBehaviour
 	private void SetRandomColor()
 	{
 		friendSprite = GetComponent<SpriteRenderer>();
+		friendSprite.color = colors[colorID];
+		attractionID = colorID;
 		//Set the GameObject's Color quickly to a set Color (blue)
-		switch (colorID)
+		/*switch (colorID)
 		{
 			//if randomNum = 1 color = Red.
 			case 1:
@@ -125,6 +130,6 @@ public class Friends : MonoBehaviour
 				friendSprite.color = Color.black;
 				attractionID = 0;
 				break;
-		}
+		}*/
 	}
 }

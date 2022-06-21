@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -5,6 +6,7 @@ public class Player : MonoBehaviour
 	[Header("Player")]
 	[SerializeField] float moveSpeed = 10f;
 	[SerializeField] float padding = 0.5f;
+	[SerializeField] List<Color> colors = new List<Color>();
 
 	float xMin;
 	float xMax;
@@ -57,10 +59,12 @@ public class Player : MonoBehaviour
 
 	private void SetRandomColor()
 	{
-		int randomNum = Random.Range(1, 6);
+		int randomNum = Random.Range(0, colors.Count - 1);
 		playerSprite = GetComponent<SpriteRenderer>();
+		playerSprite.color = colors[randomNum];
+		attractionID = randomNum;
 		//Set the GameObject's Color quickly to a set Color (blue)
-		switch (randomNum)
+		/*switch (randomNum)
 		{
 			case 1:
 				playerSprite.color = Color.red;
@@ -90,7 +94,7 @@ public class Player : MonoBehaviour
 				playerSprite.color = Color.black;
 				attractionID = 7;
 				break;
-		}
+		}*/
 	}
 
 }

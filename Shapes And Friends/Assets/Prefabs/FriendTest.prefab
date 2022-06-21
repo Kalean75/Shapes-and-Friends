@@ -51,6 +51,13 @@ MonoBehaviour:
   friendSpeed: 5
   fickleFriendTimerMax: 10
   fickleFriendTimerMin: 1
+  colors:
+  - {r: 0.47058824, g: 0.78431374, b: 0.17254902, a: 1}
+  - {r: 0, g: 0.29411766, b: 0.9607843, a: 1}
+  - {r: 0.9607843, g: 0, b: 0.4509804, a: 1}
+  - {r: 0.9607843, g: 0.39215687, b: 0, a: 1}
+  - {r: 0.9607843, g: 0.8, b: 0, a: 1}
+  - {r: 0.94509804, g: 0, b: 0.9607843, a: 0}
 --- !u!212 &587895308569183190
 SpriteRenderer:
   m_ObjectHideFlags: 0
