@@ -42,6 +42,6 @@ public class FriendSpawner : MonoBehaviour
 	}
     public void decrementCurrentlySpawnedFriends()
     {
-        currentlySpawnedFriends++;
+        currentlySpawnedFriends--;
     }
 }

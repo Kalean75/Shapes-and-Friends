@@ -19,6 +19,7 @@ public class Friends : MonoBehaviour
 	//Vector2 playerPosition;
 	bool following = false;
 	bool repel = false;
+	bool colliderTriggered = false;
 
 	//used to determine color
 	int colorID;
@@ -73,14 +74,15 @@ public class Friends : MonoBehaviour
 	//triggers when player enters trigger area
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (collision.transform.gameObject.tag == "Player")
+		if (collision.transform.gameObject.tag == "Player" && !colliderTriggered)
 		{
 
 			//set color on approach
 			SetRandomColor();
+			colliderTriggered = true;
 			//access player script to get public variables
 			int playerAttractionId = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().getAttractionID();
-			int playerShapeAttractionId = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().getAttractionID();
+			int playerShapeAttractionId = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().getShapeID();
 
 			if (this.attractionID == playerAttractionId || this.shapeID == playerShapeAttractionId)
 			{
@@ -96,7 +98,6 @@ public class Friends : MonoBehaviour
 	//gets a random number between 1 and 6 and sets color based on number
 	private void SetRandomColor()
 	{
-		colorID = Random.Range(0, colors.Count - 1);
 		friendSprite = GetComponent<SpriteRenderer>();
 		friendSprite.color = colors[colorID];
 		attractionID = colorID;
