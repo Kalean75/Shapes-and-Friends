@@ -3,14 +3,16 @@ using UnityEngine;
 
 public class Friends : MonoBehaviour
 {
-	[Header("Friend")]
+	[Header("Friend attributes")]
 	//serializeField makes the value editable within unity if clicking on object
 	[SerializeField] float friendSpeed = 5f;
 	[Header("Leave timer elements")]
 	[SerializeField] float fickleFriendTimerMax = 10f;
 	[SerializeField] float fickleFriendTimerMin = 1f;
-	[Header("Colors")]
+	[Header("Possible Colors")]
 	[SerializeField] List<Color> colors = new List<Color>();
+	[Header("Possible Shapes")]
+	[SerializeField] List<Sprite> shapes = new List<Sprite>();
 	float fickleFriendTimer;
 	int attractionID;
 	SpriteRenderer friendSprite;
@@ -20,12 +22,16 @@ public class Friends : MonoBehaviour
 
 	//used to determine color
 	int colorID;
+	//used for shape
+	int shapeID;
 
 	// Start is called before the first frame update
 	void Start()
 	{
 		//SetRandomColor();
 		colorID = Random.Range(0, colors.Count - 1);
+		shapeID = Random.Range(0, shapes.Count - 1);
+		SetRandomShape();
 		fickleFriendTimer = Random.Range(fickleFriendTimerMin, fickleFriendTimerMax);
 
 	}
@@ -73,13 +79,14 @@ public class Friends : MonoBehaviour
 			//set color on approach
 			SetRandomColor();
 			//access player script to get public variables
-			int playerAttractionId = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().attractionID;
+			int playerAttractionId = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().getAttractionID();
+			int playerShapeAttractionId = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().getAttractionID();
 
-			if (this.attractionID == playerAttractionId)
+			if (this.attractionID == playerAttractionId || this.shapeID == playerShapeAttractionId)
 			{
 				following = true;
 			}
-			else if (this.attractionID != playerAttractionId)
+			else if (this.attractionID != playerAttractionId || this.shapeID != playerShapeAttractionId)
 			{
 				repel = true;
 			}
@@ -89,6 +96,7 @@ public class Friends : MonoBehaviour
 	//gets a random number between 1 and 6 and sets color based on number
 	private void SetRandomColor()
 	{
+		colorID = Random.Range(0, colors.Count - 1);
 		friendSprite = GetComponent<SpriteRenderer>();
 		friendSprite.color = colors[colorID];
 		attractionID = colorID;
@@ -132,4 +140,12 @@ public class Friends : MonoBehaviour
 				break;
 		}*/
 	}
+
+
+	private void SetRandomShape()
+	{
+		friendSprite = GetComponent<SpriteRenderer>();
+		friendSprite.sprite = shapes[shapeID];
+	}
+
 }

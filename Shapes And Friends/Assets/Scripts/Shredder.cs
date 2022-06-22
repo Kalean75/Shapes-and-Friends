@@ -6,9 +6,9 @@ public class Shredder : MonoBehaviour
 	{
 		//removes gameobject from game
 		Destroy(collision.gameObject);
-		if(GameObject.FindGameObjectWithTag("Spawner").GetComponent<FriendSpawner>().currentlySpawnedFriends > 0)
+		if(GameObject.FindGameObjectWithTag("Spawner").GetComponent<FriendSpawner>().getCurrentlySpawnedFriends() > 0)
 		{
-			GameObject.FindGameObjectWithTag("Spawner").GetComponent<FriendSpawner>().currentlySpawnedFriends--;
+			GameObject.FindGameObjectWithTag("Spawner").GetComponent<FriendSpawner>().decrementCurrentlySpawnedFriends();
 		}
 	}
 }

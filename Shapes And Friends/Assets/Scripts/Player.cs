@@ -6,16 +6,20 @@ public class Player : MonoBehaviour
 	[Header("Player")]
 	[SerializeField] float moveSpeed = 10f;
 	[SerializeField] float padding = 0.5f;
+	[Header("Possible colors")]
 	[SerializeField] List<Color> colors = new List<Color>();
+	[Header("Possible Shapes")]
+	[SerializeField] List<Sprite> shapes = new List<Sprite>();
 
-	float xMin;
-	float xMax;
-	float yMin;
-	float yMax;
+	private float xMin;
+	private float xMax;
+	private float yMin;
+	private float yMax;
 
 	//public int numberOfFriends = 0;
 
-	public int attractionID = 0;
+	private int attractionID = 0;
+	private int shapeID;
 
 	SpriteRenderer playerSprite;
 	//The Color to be assigned to the Renderer’s Material
@@ -27,9 +31,18 @@ public class Player : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
+		SetRandomShape();
 		SetRandomColor();
 		SetBounds();
 	}
+
+	private void SetRandomShape()
+	{
+		shapeID = Random.Range(0, shapes.Count - 1);
+		playerSprite = GetComponent<SpriteRenderer>();
+		playerSprite.sprite = shapes[shapeID];
+	}
+
 	// Update is called once per frame
 	void Update()
 	{
@@ -95,6 +108,15 @@ public class Player : MonoBehaviour
 				attractionID = 7;
 				break;
 		}*/
+	}
+
+	public int getAttractionID()
+	{
+		return attractionID;
+	}
+	public int getShapeID()
+	{
+		return shapeID;
 	}
 
 }

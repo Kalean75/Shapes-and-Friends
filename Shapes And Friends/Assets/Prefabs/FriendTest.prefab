@@ -58,6 +58,12 @@ MonoBehaviour:
   - {r: 0.9607843, g: 0.39215687, b: 0, a: 1}
   - {r: 0.9607843, g: 0.8, b: 0, a: 1}
   - {r: 0.94509804, g: 0, b: 0.9607843, a: 0}
+  shapes:
+  - {fileID: 21300000, guid: 74382f52f8d174a4ea6e14ad297ea68e, type: 3}
+  - {fileID: 21300000, guid: ee533cf31c3b7e245a745738ae5dad29, type: 3}
+  - {fileID: 21300000, guid: c324d84c3041f0f45bceae7cf1102fa1, type: 3}
+  - {fileID: 21300000, guid: 3f9056766bd08fa489ea858198541601, type: 3}
+  - {fileID: 21300000, guid: c44cf4ceb8be8064ab1d838e67872ce3, type: 3}
 --- !u!212 &587895308569183190
 SpriteRenderer:
   m_ObjectHideFlags: 0
