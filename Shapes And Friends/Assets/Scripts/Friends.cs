@@ -6,6 +6,7 @@ public class Friends : MonoBehaviour
 	[Header("Friend attributes")]
 	//serializeField makes the value editable within unity if clicking on object
 	[SerializeField] float friendSpeed = 5f;
+	[SerializeField] float followdistance = 1f;
 	[Header("Leave timer elements")]
 	[SerializeField] float fickleFriendTimerMax = 10f;
 	[SerializeField] float fickleFriendTimerMin = 1f;
@@ -47,24 +48,29 @@ public class Friends : MonoBehaviour
 	{
 		if (following)
 		{
+			//if timer is 0 leave
 			if (fickleFriendTimer <= 0)
 			{
 				//temp change later
 				transform.position += new Vector3(-friendSpeed * Time.deltaTime, 0);
-				//transform.position += transform.forward * Time.deltaTime * friendSpeed;
+				//transform.position += this.transform.forward * Time.deltaTime * friendSpeed;
 			}
+			//if not 0 continue following
 			else
 			{
-				Vector2 newPos = Vector2.MoveTowards(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position, friendSpeed * Time.deltaTime);
+				Vector2 target = new Vector2(GameObject.FindGameObjectWithTag("Player").transform.position.x - followdistance, GameObject.FindGameObjectWithTag("Player").transform.position.y);
+				Vector2 newPos = Vector2.MoveTowards(transform.position, target , friendSpeed * Time.deltaTime);
 				transform.position = newPos;
 				fickleFriendTimer -= Time.deltaTime;
 			}
 		}
+		//if repeled move opposite
 		else if(repel)
 		{
 			Vector2 newPos = Vector2.MoveTowards(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position, -friendSpeed * Time.deltaTime);
 			transform.position = newPos;
 		}
+		//if not collided move to left
 		if (!repel && !following)
 		{
 			transform.position += new Vector3(-friendSpeed * Time.deltaTime, 0);
@@ -74,7 +80,7 @@ public class Friends : MonoBehaviour
 	//triggers when player enters trigger area
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (collision.transform.gameObject.tag == "Player" && !colliderTriggered)
+		if (collision.transform.gameObject.CompareTag("Player") && !colliderTriggered)
 		{
 
 			//set color on approach

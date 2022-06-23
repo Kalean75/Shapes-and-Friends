@@ -49,7 +49,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   friendSpeed: 5
-  fickleFriendTimerMax: 200
+  followdistance: 1.5
+  fickleFriendTimerMax: 5
   fickleFriendTimerMin: 1
   colors:
   - {r: 0.47058824, g: 0.78431374, b: 0.17254902, a: 1}
