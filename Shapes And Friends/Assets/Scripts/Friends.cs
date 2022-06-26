@@ -34,6 +34,7 @@ public class Friends : MonoBehaviour
 		colorID = Random.Range(0, colors.Count - 1);
 		shapeID = Random.Range(0, shapes.Count - 1);
 		SetRandomShape();
+		//sets timer between min and max range where friend leaves
 		fickleFriendTimer = Random.Range(fickleFriendTimerMin, fickleFriendTimerMax);
 
 	}
@@ -48,11 +49,12 @@ public class Friends : MonoBehaviour
 	{
 		if (following)
 		{
+			friendSprite.color = Color.Lerp(friendSprite.color, colors[colorID], Time.deltaTime * 1);
 			//if timer is 0 leave
 			if (fickleFriendTimer <= 0)
 			{
 				//temp change later
-				transform.position += new Vector3(-friendSpeed * Time.deltaTime, 0);
+				transform.position += new Vector3(friendSpeed * Time.deltaTime, friendSpeed * Time.deltaTime, 0);
 				//transform.position += this.transform.forward * Time.deltaTime * friendSpeed;
 			}
 			//if not 0 continue following
@@ -105,7 +107,7 @@ public class Friends : MonoBehaviour
 	private void SetRandomColor()
 	{
 		friendSprite = GetComponent<SpriteRenderer>();
-		friendSprite.color = colors[colorID];
+		friendSprite.color = Color.Lerp(friendSprite.color, colors[colorID], Time.deltaTime * 1);
 		attractionID = colorID;
 		//Set the GameObject's Color quickly to a set Color (blue)
 		/*switch (colorID)

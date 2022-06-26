@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9cff28999caad7419235d1609b53b75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 0
-  MaxSpawnedFriends: 25
+  spawnRate: 10
+  MaxSpawnedFriends: 3
   friend: {fileID: 587895308569183195, guid: 62a86d1f419361f439d59d3759025328, type: 3}
   spawner: {fileID: 2214141479590440290}
