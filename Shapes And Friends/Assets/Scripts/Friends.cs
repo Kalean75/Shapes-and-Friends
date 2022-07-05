@@ -6,7 +6,8 @@ public class Friends : MonoBehaviour
 	[Header("Friend attributes")]
 	//serializeField makes the value editable within unity if clicking on object
 	[SerializeField] float friendSpeed = 5f;
-	[SerializeField] float followdistance = 1f;
+	[SerializeField] float followDistance = 1f;
+	[SerializeField] bool gradualColorChange = true;
 	[Header("Leave timer elements")]
 	[SerializeField] float fickleFriendTimerMax = 10f;
 	[SerializeField] float fickleFriendTimerMin = 1f;
@@ -49,7 +50,10 @@ public class Friends : MonoBehaviour
 	{
 		if (following)
 		{
-			friendSprite.color = Color.Lerp(friendSprite.color, colors[colorID], Time.deltaTime * 1);
+			if (gradualColorChange)
+			{
+				friendSprite.color = Color.Lerp(friendSprite.color, colors[colorID], Time.deltaTime * 1);
+			}
 			//if timer is 0 leave
 			if (fickleFriendTimer <= 0)
 			{
@@ -60,7 +64,7 @@ public class Friends : MonoBehaviour
 			//if not 0 continue following
 			else
 			{
-				Vector2 target = new Vector2(GameObject.FindGameObjectWithTag("Player").transform.position.x - followdistance, GameObject.FindGameObjectWithTag("Player").transform.position.y);
+				Vector2 target = new Vector2(GameObject.FindGameObjectWithTag("Player").transform.position.x - followDistance, GameObject.FindGameObjectWithTag("Player").transform.position.y);
 				Vector2 newPos = Vector2.MoveTowards(transform.position, target , friendSpeed * Time.deltaTime);
 				transform.position = newPos;
 				fickleFriendTimer -= Time.deltaTime;
@@ -107,7 +111,14 @@ public class Friends : MonoBehaviour
 	private void SetRandomColor()
 	{
 		friendSprite = GetComponent<SpriteRenderer>();
-		friendSprite.color = Color.Lerp(friendSprite.color, colors[colorID], Time.deltaTime * 1);
+		if(!gradualColorChange)
+		{
+			friendSprite.color = colors[colorID];
+		}
+		else
+		{
+			friendSprite.color = Color.Lerp(friendSprite.color, colors[colorID], Time.deltaTime * 1);
+		}
 		attractionID = colorID;
 		//Set the GameObject's Color quickly to a set Color (blue)
 		/*switch (colorID)

@@ -50,6 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   friendSpeed: 5
   followdistance: 1.5
+  gradualColor: 1
   fickleFriendTimerMax: 1000
   fickleFriendTimerMin: 1000
   colors:
