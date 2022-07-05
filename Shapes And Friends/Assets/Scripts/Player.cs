@@ -35,7 +35,9 @@ public class Player : MonoBehaviour
 		SetRandomColor();
 		SetBounds();
 	}
-
+	/// <summary>
+	/// sets the shape of the player to a random one based on a random number.
+	/// </summary>
 	private void SetRandomShape()
 	{
 		shapeID = Random.Range(0, shapes.Count - 1);
@@ -48,6 +50,9 @@ public class Player : MonoBehaviour
 	{
 		MovePlayer();
 	}
+	/// <summary>
+	/// Moves the player based on keyboard input.
+	/// </summary>
 	private void MovePlayer()
 	{
 		//Time.deltaTime makes movement framerate independent
@@ -60,7 +65,10 @@ public class Player : MonoBehaviour
 		transform.position = new Vector2(newXPosition, newYPosition);
 	}
 
-	//Makes so player can't move off screen. Possibly change
+
+	/// <summary>
+	///  sets the bounds of the player movement. Locks the players movement to the viewport.
+	/// </summary>
 	private void SetBounds()
 	{
 		Camera gameCamera = Camera.main;
@@ -69,7 +77,9 @@ public class Player : MonoBehaviour
 		yMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).y + padding;
 		yMax = gameCamera.ViewportToWorldPoint(new Vector3(0, 1, 0)).y - padding;
 	}
-
+	/// <summary>
+	/// sets the shape to a random color based on a random number.
+	/// </summary>
 	private void SetRandomColor()
 	{
 		int randomNum = Random.Range(0, colors.Count - 1);
@@ -109,11 +119,18 @@ public class Player : MonoBehaviour
 				break;
 		}*/
 	}
-
+	/// <summary>
+	/// gets the attraction id for use in repulsion or attraction.
+	/// </summary>
+	/// <returns>returns the attraction id for attraction or repulsion</returns>
 	public int getAttractionID()
 	{
 		return attractionID;
 	}
+	/// <summary>
+	/// gets the id for the shape for use in the list
+	/// </summary>
+	/// <returns>returns </returns>
 	public int getShapeID()
 	{
 		return shapeID;

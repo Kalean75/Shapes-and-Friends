@@ -8,15 +8,21 @@ public class Friends : MonoBehaviour
 	[SerializeField] float friendSpeed = 5f;
 	[SerializeField] float followDistance = 1f;
 	[SerializeField] bool gradualColorChange = true;
+	//determines when a friend will leave the player
 	[Header("Leave timer elements")]
 	[SerializeField] float fickleFriendTimerMax = 10f;
 	[SerializeField] float fickleFriendTimerMin = 1f;
+	//a list of the possible colors the shapes can be
 	[Header("Possible Colors")]
 	[SerializeField] List<Color> colors = new List<Color>();
+	//a list of the possible shapes the friends can be
 	[Header("Possible Shapes")]
 	[SerializeField] List<Sprite> shapes = new List<Sprite>();
+	//the time a friend will leave, randomized between the minimum and maximum
 	float fickleFriendTimer;
+	//used to determine if friend is attracted to or repeled by player
 	int attractionID;
+	//the spriterenderer of friend
 	SpriteRenderer friendSprite;
 	//Vector2 playerPosition;
 	bool following = false;
@@ -45,7 +51,9 @@ public class Friends : MonoBehaviour
 	{
 		moveFriend();
 	}
-
+	/// <summary>
+	/// moves the friend towards the player if attracted or repels them if they are not.
+	/// </summary>
 	private void moveFriend()
 	{
 		if (following)
@@ -83,7 +91,11 @@ public class Friends : MonoBehaviour
 		}
 	}
 
-	//triggers when player enters trigger area
+
+	/// <summary>
+	/// triggers when player enters trigger area
+	/// </summary>
+	/// <param name="collision"> the collider that is being triggered</param>
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		if (collision.transform.gameObject.CompareTag("Player") && !colliderTriggered)
@@ -107,7 +119,9 @@ public class Friends : MonoBehaviour
 		}
 	}
 
-	//gets a random number between 1 and 6 and sets color based on number
+	/// <summary>
+	/// gets a random number between 1 and 6 and sets color based on number
+	/// </summary>
 	private void SetRandomColor()
 	{
 		friendSprite = GetComponent<SpriteRenderer>();
@@ -161,7 +175,9 @@ public class Friends : MonoBehaviour
 		}*/
 	}
 
-
+	/// <summary>
+	/// sets the shape of the friend to a random one.
+	/// </summary>
 	private void SetRandomShape()
 	{
 		friendSprite = GetComponent<SpriteRenderer>();
