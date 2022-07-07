@@ -18,6 +18,11 @@ public class Friends : MonoBehaviour
 	//a list of the possible shapes the friends can be
 	[Header("Possible Shapes")]
 	[SerializeField] List<Sprite> shapes = new List<Sprite>();
+	[Header("Reaction materials")]
+	[SerializeField] Material[] materials = new Material[2];
+	[Header("Audio")]
+	[SerializeField] AudioClip[] reactionSounds = new AudioClip[2];
+	[SerializeField] [Range(0, 1)] float ReactionSoundVolume = 0.25f;
 	//the time a friend will leave, randomized between the minimum and maximum
 	float fickleFriendTimer;
 	//used to determine if friend is attracted to or repeled by player
@@ -111,10 +116,12 @@ public class Friends : MonoBehaviour
 			if (this.attractionID == playerAttractionId || this.shapeID == playerShapeAttractionId)
 			{
 				following = true;
+				playSparkle();
 			}
 			else if (this.attractionID != playerAttractionId || this.shapeID != playerShapeAttractionId)
 			{
 				repel = true;
+				playAngry();
 			}
 		}
 	}
@@ -184,4 +191,17 @@ public class Friends : MonoBehaviour
 		friendSprite.sprite = shapes[shapeID];
 	}
 
+	private void playAngry()
+	{
+		GetComponent<ParticleSystemRenderer>().material = materials[0];
+		GetComponent<ParticleSystem>().Play();
+		AudioSource.PlayClipAtPoint(reactionSounds[0], Camera.main.transform.position, ReactionSoundVolume);
+	}
+
+	private void playSparkle()
+	{
+		GetComponent<ParticleSystemRenderer>().material = materials[1];
+		GetComponent<ParticleSystem>().Play();
+		AudioSource.PlayClipAtPoint(reactionSounds[1], Camera.main.transform.position, ReactionSoundVolume);
+	}
 }

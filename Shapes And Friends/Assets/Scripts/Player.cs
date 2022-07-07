@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
 	[SerializeField] float padding = 0.5f;
 	[Header("Possible colors")]
 	[SerializeField] List<Color> colors = new List<Color>();
-	[Header("Possible Shapes")]
+	[Header("Possible Sprites")]
 	[SerializeField] List<Sprite> shapes = new List<Sprite>();
 
 	private float xMin;
@@ -18,7 +18,9 @@ public class Player : MonoBehaviour
 
 	//public int numberOfFriends = 0;
 
+	//if attractionid of player = attractionid of friend, shapes are attracted to each other
 	private int attractionID = 0;
+	//if shapeid of player = shapeid of friend, shapes are attracted to each other
 	private int shapeID;
 
 	SpriteRenderer playerSprite;
