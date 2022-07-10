@@ -4,31 +4,43 @@ using UnityEngine;
 
 public class FriendSpawner : MonoBehaviour
 {
-    [SerializeField] float spawnRate = 100f;
+    [SerializeField] float maxspawnRate = 100f;
+    [SerializeField] float minspawnRate = 10f;
     float spawnTimer;
-    [SerializeField] int MaxSpawnedFriends = 1;
+    //[SerializeField] int MaxSpawnedFriends = 1;
     [SerializeField] GameObject friend;
     [SerializeField] GameObject spawner;
     private int currentlySpawnedFriends = 0;
     // Start is called before the first frame update
     void Start()
     {
-        spawnTimer = Random.Range(1, spawnRate);
+        spawnTimer = Random.Range(minspawnRate, maxspawnRate);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (currentlySpawnedFriends <= MaxSpawnedFriends)
+        spawnTimer -= Time.deltaTime;
+        //Debug.Log(spawnTimer);
+        if (spawnTimer <= 0f)
+        {
+            Instantiate(friend, new Vector3(spawner.transform.position.x, spawner.transform.position.y, spawner.transform.position.z), Quaternion.identity);
+            incrementCurrentlySpawnedFriends();
+            spawnTimer = Random.Range(minspawnRate, maxspawnRate);
+            Debug.Log(currentlySpawnedFriends);
+        }
+        /*if (currentlySpawnedFriends <= MaxSpawnedFriends)
         {
             spawnTimer -= Time.deltaTime;
-            if(spawnTimer <= 0f)
+            //Debug.Log(spawnTimer);
+            if (spawnTimer <= 0f)
 			{
                 Instantiate(friend, new Vector3(spawner.transform.position.x, spawner.transform.position.y, spawner.transform.position.z), Quaternion.identity);
-                currentlySpawnedFriends++;
+                incrementCurrentlySpawnedFriends();
                 spawnTimer = Random.Range(1, spawnRate);
+                Debug.Log(currentlySpawnedFriends);
             }
-        }
+        }*/
     }
     /// <summary>
     /// gets the number of friends that are currently spawned by the spawner
@@ -41,6 +53,8 @@ public class FriendSpawner : MonoBehaviour
     /// <summary>
     /// increments the number of spawned friends by 1
     /// </summary>
+    /// 
+
     public void incrementCurrentlySpawnedFriends()
 	{
         currentlySpawnedFriends++;
