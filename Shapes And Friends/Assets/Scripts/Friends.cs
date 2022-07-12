@@ -88,6 +88,7 @@ public class Friends : MonoBehaviour
 		{
 			Vector2 newPos = Vector2.MoveTowards(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position, -friendSpeed * Time.deltaTime);
 			transform.position = newPos;
+			friendSprite.color = Color.Lerp(friendSprite.color, colors[colorID], Time.deltaTime * 1);
 		}
 		//if not collided move to left
 		if (!repel && !following)

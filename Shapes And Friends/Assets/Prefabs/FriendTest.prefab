@@ -53,8 +53,8 @@ MonoBehaviour:
   friendSpeed: 5
   followDistance: 1
   gradualColorChange: 1
-  fickleFriendTimerMax: 1000
-  fickleFriendTimerMin: 10
+  fickleFriendTimerMax: 10
+  fickleFriendTimerMin: 1
   colors:
   - {r: 0.47058824, g: 0.78431374, b: 0.17254902, a: 1}
   - {r: 0, g: 0.29411766, b: 0.9607843, a: 1}

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class FriendSpawner : MonoBehaviour
 {
-    [SerializeField] float maxspawnRate = 100f;
-    [SerializeField] float minspawnRate = 10f;
+    [SerializeField] float maxSpawnRate = 100f;
+    [SerializeField] float minSpawnRate = 10f;
     float spawnTimer;
     //[SerializeField] int MaxSpawnedFriends = 1;
     [SerializeField] GameObject friend;
@@ -14,7 +14,7 @@ public class FriendSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spawnTimer = Random.Range(minspawnRate, maxspawnRate);
+        spawnTimer = Random.Range(minSpawnRate, maxSpawnRate);
     }
 
     // Update is called once per frame
@@ -26,7 +26,7 @@ public class FriendSpawner : MonoBehaviour
         {
             Instantiate(friend, new Vector3(spawner.transform.position.x, spawner.transform.position.y, spawner.transform.position.z), Quaternion.identity);
             incrementCurrentlySpawnedFriends();
-            spawnTimer = Random.Range(minspawnRate, maxspawnRate);
+            spawnTimer = Random.Range(minSpawnRate, maxSpawnRate);
             Debug.Log(currentlySpawnedFriends);
         }
         /*if (currentlySpawnedFriends <= MaxSpawnedFriends)
