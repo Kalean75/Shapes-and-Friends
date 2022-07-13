@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
 	private int attractionID = 0;
 	//if shapeid of player = shapeid of friend, shapes are attracted to each other
 	private int shapeID;
-
+	private int stageOfLife;
 	SpriteRenderer playerSprite;
 	//The Color to be assigned to the Renderer’s Material
 	//Color m_NewColor;
@@ -138,4 +138,21 @@ public class Player : MonoBehaviour
 		return shapeID;
 	}
 
+	/// <summary>
+	/// gets player's stage of life
+	/// </summary>
+	/// <returns>returns the current stage of life of the player
+	public int getStageOfLife()
+    {
+		return stageOfLife;
+    }
+
+	/// <summary>
+	/// Add 1 to the player stage of life to move to the next stage
+	/// </summary>
+	/// <returns>returns </returns>
+	public void changeStageOfLife()
+    {
+		stageOfLife++;
+    }
 }
