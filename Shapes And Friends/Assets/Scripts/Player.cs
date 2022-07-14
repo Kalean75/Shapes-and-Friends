@@ -47,7 +47,7 @@ public class Player : MonoBehaviour
 		shapeSpawnID = Random.Range(0, shapes.Count - 1);
 		playerSprite = GetComponent<SpriteRenderer>();
 		playerSprite.sprite = shapes[shapeSpawnID];
-		string shapeName = playerSprite.sprite.name;
+		string shapeName = playerSprite.sprite.name.ToLower();
 		switch (shapeName)
 		{
 			case string when shapeName.Contains("square"):

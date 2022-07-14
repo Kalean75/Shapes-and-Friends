@@ -195,7 +195,7 @@ public class Friends : MonoBehaviour
 	{
 		friendSprite = GetComponent<SpriteRenderer>();
 		friendSprite.sprite = shapes[shapeSpawnID];
-		string shapeName = friendSprite.sprite.name;
+		string shapeName = friendSprite.sprite.name.ToLower();
 		switch (shapeName)
 		{
 			case string when shapeName.Contains("square"):
