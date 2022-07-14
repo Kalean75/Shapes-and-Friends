@@ -48,7 +48,6 @@ public class Player : MonoBehaviour
 		playerSprite = GetComponent<SpriteRenderer>();
 		playerSprite.sprite = shapes[shapeSpawnID];
 		string shapeName = playerSprite.sprite.name;
-		Debug.Log(shapeName);
 		switch (shapeName)
 		{
 			case string when shapeName.Contains("square"):
@@ -58,10 +57,16 @@ public class Player : MonoBehaviour
 				shapeID = 2;
 				break;
 			case string when shapeName.Contains("square"):
-				shapeID = 4;
+				shapeID = 3;
+				break;
+			case string when shapeName.Contains("rectangle"):
+				shapeID = 3;
 				break;
 			case string when shapeName.Contains("agon"):
 				shapeID = 4;
+				break;
+			case string when shapeName.Contains("agon"):
+				shapeID = 5;
 				break;
 		}
 	}
