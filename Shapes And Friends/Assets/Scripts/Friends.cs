@@ -37,6 +37,7 @@ public class Friends : MonoBehaviour
 	//used to determine color
 	int colorID;
 	//used for shape
+	int shapeSpawnID;
 	int shapeID;
 
 	// Start is called before the first frame update
@@ -44,7 +45,7 @@ public class Friends : MonoBehaviour
 	{
 		//SetRandomColor();
 		colorID = Random.Range(0, colors.Count - 1);
-		shapeID = Random.Range(0, shapes.Count - 1);
+		shapeSpawnID = Random.Range(0, shapes.Count - 1);
 		SetRandomShape();
 		//sets timer between min and max range where friend leaves
 		fickleFriendTimer = Random.Range(fickleFriendTimerMin, fickleFriendTimerMax);
@@ -193,7 +194,23 @@ public class Friends : MonoBehaviour
 	private void SetRandomShape()
 	{
 		friendSprite = GetComponent<SpriteRenderer>();
-		friendSprite.sprite = shapes[shapeID];
+		friendSprite.sprite = shapes[shapeSpawnID];
+		string shapeName = friendSprite.name;
+		switch (shapeName)
+		{
+			case string when shapeName.Contains("square"):
+				shapeID = 1;
+				break;
+			case string when shapeName.Contains("triangle"):
+				shapeID = 2;
+				break;
+			case string when shapeName.Contains("square"):
+				shapeID = 4;
+				break;
+			case string when shapeName.Contains("agon"):
+				shapeID = 4;
+				break;
+		}
 	}
 
 	private void playAngry()

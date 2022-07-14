@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
 	//if attractionid of player = attractionid of friend, shapes are attracted to each other
 	private int attractionID = 0;
 	//if shapeid of player = shapeid of friend, shapes are attracted to each other
+	private int shapeSpawnID;
 	private int shapeID;
 	private int stageOfLife;
 	SpriteRenderer playerSprite;
@@ -33,6 +34,7 @@ public class Player : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
+		playerSprite = GetComponent<SpriteRenderer>();
 		SetRandomShape();
 		SetRandomColor();
 		SetBounds();
@@ -42,9 +44,26 @@ public class Player : MonoBehaviour
 	/// </summary>
 	private void SetRandomShape()
 	{
-		shapeID = Random.Range(0, shapes.Count - 1);
+		shapeSpawnID = Random.Range(0, shapes.Count - 1);
 		playerSprite = GetComponent<SpriteRenderer>();
-		playerSprite.sprite = shapes[shapeID];
+		playerSprite.sprite = shapes[shapeSpawnID];
+		string shapeName = playerSprite.sprite.name;
+		Debug.Log(shapeName);
+		switch (shapeName)
+		{
+			case string when shapeName.Contains("square"):
+				shapeID = 1;
+				break;
+			case string when shapeName.Contains("triangle"):
+				shapeID = 2;
+				break;
+			case string when shapeName.Contains("square"):
+				shapeID = 4;
+				break;
+			case string when shapeName.Contains("agon"):
+				shapeID = 4;
+				break;
+		}
 	}
 
 	// Update is called once per frame
@@ -85,7 +104,6 @@ public class Player : MonoBehaviour
 	private void SetRandomColor()
 	{
 		int randomNum = Random.Range(0, colors.Count - 1);
-		playerSprite = GetComponent<SpriteRenderer>();
 		playerSprite.color = colors[randomNum];
 		attractionID = randomNum;
 		//Set the GameObject's Color quickly to a set Color (blue)

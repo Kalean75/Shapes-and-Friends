@@ -872,7 +872,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1275368774739646056, guid: 437331d82f3ee0a4a8a0f5b5a86ccbef, type: 3}
       propertyPath: shapes.Array.size
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1275368774739646057, guid: 437331d82f3ee0a4a8a0f5b5a86ccbef, type: 3}
       propertyPath: m_Name
