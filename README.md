@@ -1,15 +1,22 @@
 # Shapes-and-Friends
-A game about a shape going through life
+	A game about a shape going through life
+	
+## Controls
+	W: Move player Up
+	A: Move player Left
+	S: Move player Down
+	D: Move player Right
+	
 ## Credits
 
-Erica Chen
+	Erica Chen
 
-Devin White
+	Devin White
 
-Amanda Duong
+	Amanda Duong
 
-Andrea Belangdal
+	Andrea Belangdal
 
-Huy Nguyen
+	Huy Nguyen
 
-Jason Chang
+	Jason Chang
