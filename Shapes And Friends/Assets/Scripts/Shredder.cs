@@ -12,11 +12,11 @@ public class Shredder : MonoBehaviour
 		if(collision.CompareTag("Friend"))
 		{
 			Destroy(collision.gameObject);
-			if (GameObject.FindGameObjectWithTag("Spawner").GetComponent<FriendSpawner>().getCurrentlySpawnedFriends() > 0)
+			/*if (GameObject.FindGameObjectWithTag("Spawner").GetComponent<FriendSpawner>().getCurrentlySpawnedFriends() > 0)
 			{
 				GameObject.FindGameObjectWithTag("Spawner").GetComponent<FriendSpawner>().decrementCurrentlySpawnedFriends();
 
-			}
+			}*/
 		}
 	}
 }

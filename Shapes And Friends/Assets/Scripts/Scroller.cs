@@ -7,6 +7,7 @@ public class Scroller : MonoBehaviour
 
 	//testing purposes remove later
 	[SerializeField] bool scroll = true;
+	[SerializeField] bool loop = false;
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -21,10 +22,13 @@ public class Scroller : MonoBehaviour
 			//Add renderer to background
 			transform.position += new Vector3(-scrollSpeed * Time.deltaTime, 0);
 
-			//if (transform.position.x < -11.32)
-			//{
-			//	transform.position = new Vector3(11.32f, transform.position.y);
-			//}
+			if (loop)
+			{
+				if (transform.position.x < -11.32)
+				{
+					transform.position = new Vector3(11.32f, transform.position.y);
+				}
+			}
 		}
 	}
 }

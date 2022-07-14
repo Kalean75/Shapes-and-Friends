@@ -6,7 +6,7 @@ using TMPro;
 public class StageOfLife : MonoBehaviour
 {
 	public TextMeshProUGUI textBox;
-	public GameObject collider;
+	public new GameObject collider;
 
 
 	private void OnTriggerEnter2D(Collider2D collision)

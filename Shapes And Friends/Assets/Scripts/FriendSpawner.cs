@@ -10,7 +10,7 @@ public class FriendSpawner : MonoBehaviour
     //[SerializeField] int MaxSpawnedFriends = 1;
     [SerializeField] GameObject friend;
     //[SerializeField] GameObject spawner;
-    private int currentlySpawnedFriends = 0;
+    //private int currentlySpawnedFriends = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,9 +25,9 @@ public class FriendSpawner : MonoBehaviour
         if (spawnTimer <= 0f)
         {
             Instantiate(friend, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), Quaternion.identity);
-            incrementCurrentlySpawnedFriends();
+            //incrementCurrentlySpawnedFriends();
             spawnTimer = Random.Range(minSpawnRate, maxSpawnRate);
-            Debug.Log(currentlySpawnedFriends);
+            //Debug.Log(currentlySpawnedFriends);
         }
         /*if (currentlySpawnedFriends <= MaxSpawnedFriends)
         {
@@ -46,7 +46,7 @@ public class FriendSpawner : MonoBehaviour
     /// gets the number of friends that are currently spawned by the spawner
     /// </summary>
     /// <returns>returns the number of currently spawned friends</returns>
-    public int getCurrentlySpawnedFriends()
+    /*public int getCurrentlySpawnedFriends()
 	{
         return currentlySpawnedFriends;
 	}
@@ -65,5 +65,5 @@ public class FriendSpawner : MonoBehaviour
     public void decrementCurrentlySpawnedFriends()
     {
         currentlySpawnedFriends--;
-    }
+    }*/
 }

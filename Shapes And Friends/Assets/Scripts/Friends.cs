@@ -113,10 +113,10 @@ public class Friends : MonoBehaviour
 			//access player script to get public variables
 			int playerAttractionId = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().getAttractionID();
 			int playerShapeAttractionId = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().getShapeID();
-			if (GameObject.FindGameObjectWithTag("Spawner").GetComponent<FriendSpawner>().getCurrentlySpawnedFriends() > 0)
+			/*if (GameObject.FindGameObjectWithTag("Spawner").GetComponent<FriendSpawner>().getCurrentlySpawnedFriends() > 0)
 			{
 				GameObject.FindGameObjectWithTag("Spawner").GetComponent<FriendSpawner>().decrementCurrentlySpawnedFriends();
-			}
+			}*/
 
 			if (this.attractionID == playerAttractionId || this.shapeID == playerShapeAttractionId)
 			{
