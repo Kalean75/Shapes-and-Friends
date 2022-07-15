@@ -31,4 +31,9 @@ public class Scroller : MonoBehaviour
 			}
 		}
 	}
+
+	public float getScrollSpeed()
+	{
+		return scrollSpeed;
+	}
 }

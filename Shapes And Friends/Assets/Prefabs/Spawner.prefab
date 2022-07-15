@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 74382f52f8d174a4ea6e14ad297ea68e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -97,7 +97,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9cff28999caad7419235d1609b53b75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 10
-  MaxSpawnedFriends: 3
+  maxSpawnRate: 100
+  minSpawnRate: 10
   friend: {fileID: 587895308569183195, guid: 62a86d1f419361f439d59d3759025328, type: 3}
-  spawner: {fileID: 0}

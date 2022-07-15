@@ -65,7 +65,7 @@ public class Player : MonoBehaviour
 			case string when shapeName.Contains("agon"):
 				shapeID = 4;
 				break;
-			case string when shapeName.Contains("agon"):
+			case string when shapeName.Contains("trapezoid"):
 				shapeID = 5;
 				break;
 		}

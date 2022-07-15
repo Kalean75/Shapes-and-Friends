@@ -147,45 +147,6 @@ public class Friends : MonoBehaviour
 			friendSprite.color = Color.Lerp(friendSprite.color, colors[colorID], Time.deltaTime * 1);
 		}
 		attractionID = colorID;
-		//Set the GameObject's Color quickly to a set Color (blue)
-		/*switch (colorID)
-		{
-			//if randomNum = 1 color = Red.
-			case 1:
-				friendSprite.color = Color.red;
-				attractionID = 1;
-				break;
-			//if randomNum = 2 color = Green.
-			case 2:
-				friendSprite.color = Color.green;
-				attractionID = 2;
-				break;
-			//if randomNum = 3 color = Blue.
-			case 3:
-				friendSprite.color = Color.blue;
-				attractionID = 3;
-				break;
-			//if randomNum = 4 color = Cyan.
-			case 4:
-				friendSprite.color = Color.cyan;
-				attractionID = 4;
-				break;
-			//if randomNum = 5 color = Yellow.
-			case 5:
-				friendSprite.color = Color.yellow;
-				attractionID = 5;
-				break;
-			//if randomNum = 6 color = Magenta.
-			case 6:
-				friendSprite.color = Color.magenta;
-				attractionID = 6;
-				break;
-			//default color = black(will presently never be black)
-			default:
-				friendSprite.color = Color.black;
-				attractionID = 0;
-				break;
-		}*/
 	}
 
 	/// <summary>
@@ -213,7 +174,7 @@ public class Friends : MonoBehaviour
 			case string when shapeName.Contains("agon"):
 				shapeID = 4;
 				break;
-			case string when shapeName.Contains("agon"):
+			case string when shapeName.Contains("trapezoid"):
 				shapeID = 5;
 				break;
 		}

@@ -6,11 +6,13 @@ TagManager:
   tags:
   - Friend
   - Spawner
+  - NPC
+  - Background
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Friends
   - Water
   - UI
   - 
