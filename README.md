@@ -17,6 +17,6 @@
 
 	Andrea Belangdal
 
-	Hung Nguyen
+	Huy Nguyen
 
 	Jason Chang
