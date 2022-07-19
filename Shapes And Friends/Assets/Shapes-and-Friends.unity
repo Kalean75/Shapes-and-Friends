@@ -221,6 +221,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: 10
+  scroll: 1
+  loop: 0
 --- !u!1 &1346255818
 GameObject:
   m_ObjectHideFlags: 0

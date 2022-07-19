@@ -43,6 +43,31 @@ public class NPC : MonoBehaviour
 		npcSprite.color = colors[colorID];
 	}
 
+	private void OnTriggerEnter2D(Collider2D Other)
+	{
+		if (Other.gameObject.CompareTag("NPC"))
+		{
+			if (npcSprite != null)
+			{
+				SpriteRenderer otherShape = GameObject.FindGameObjectWithTag("NPC").GetComponent<SpriteRenderer>();
+				otherShape.sprite = npcSprite.sprite;
+				otherShape.color = npcSprite.color;
+			}
+		}
+
+	}
+
+	private void OnTriggerStay2D(Collider2D Other)
+	{
+		if (Other.gameObject.CompareTag("NPC"))
+		{
+				SpriteRenderer otherShape = GameObject.FindGameObjectWithTag("NPC").GetComponent<SpriteRenderer>();
+				otherShape.sprite = npcSprite.sprite;
+				otherShape.color = npcSprite.color;
+		}
+
+	}
+
 	private void SetRandomShape()
 	{
 		npcSprite = GetComponent<SpriteRenderer>();
