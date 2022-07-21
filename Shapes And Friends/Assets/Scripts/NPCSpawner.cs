@@ -10,6 +10,7 @@ public class NPCSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        scrollSpeed = GameObject.FindGameObjectWithTag("Background").GetComponent<Scroller>().getScrollSpeed();
         spawnerSprite = GetComponent<SpriteRenderer>();
         Color temp = spawnerSprite.color;
         temp.a = 0f;

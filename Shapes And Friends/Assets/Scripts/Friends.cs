@@ -45,8 +45,7 @@ public class Friends : MonoBehaviour
 	{
 		//SetRandomColor();
 		colorID = Random.Range(0, colors.Count - 1);
-		shapeSpawnID = Random.Range(0, shapes.Count - 1);
-		SetRandomShape();
+		SetRandomShape(Random.Range(0, shapes.Count - 1));
 		//sets timer between min and max range where friend leaves
 		fickleFriendTimer = Random.Range(fickleFriendTimerMin, fickleFriendTimerMax);
 
@@ -152,10 +151,10 @@ public class Friends : MonoBehaviour
 	/// <summary>
 	/// sets the shape of the friend to a random one.
 	/// </summary>
-	private void SetRandomShape()
+	private void SetRandomShape(int index)
 	{
 		friendSprite = GetComponent<SpriteRenderer>();
-		friendSprite.sprite = shapes[shapeSpawnID];
+		friendSprite.sprite = shapes[index];
 		string shapeName = friendSprite.sprite.name.ToLower();
 		switch (shapeName)
 		{
