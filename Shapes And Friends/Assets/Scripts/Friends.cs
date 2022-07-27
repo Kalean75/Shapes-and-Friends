@@ -174,17 +174,8 @@ public class Friends : MonoBehaviour
 			case string when shapeName.Contains("triangle"):
 				shapeID = 2;
 				break;
-			case string when shapeName.Contains("square"):
-				shapeID = 3;
-				break;
-			case string when shapeName.Contains("rectangle"):
-				shapeID = 3;
-				break;
 			case string when shapeName.Contains("agon"):
-				shapeID = 4;
-				break;
-			case string when shapeName.Contains("trapezoid"):
-				shapeID = 5;
+				shapeID = 3;
 				break;
 		}
 	}
