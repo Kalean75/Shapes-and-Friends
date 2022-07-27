@@ -24,6 +24,8 @@ public class Player : MonoBehaviour
 	private int shapeSpawnID;
 	private int shapeID;
 	private int stageOfLife;
+	private int currentNumberofFriends;
+	private int totalFriends;
 	SpriteRenderer playerSprite;
 	//The Color to be assigned to the Renderer’s Material
 	//Color m_NewColor;
@@ -177,5 +179,26 @@ public class Player : MonoBehaviour
 	public void changeStageOfLife()
     {
 		stageOfLife++;
+    }
+
+	public int getCurrentNumberofFriends()
+    {
+		return currentNumberofFriends;
+    }
+
+	public void addFriend()
+    {
+		currentNumberofFriends++;
+		totalFriends++;
+    }
+
+	public void removeFriend()
+    {
+		currentNumberofFriends--;
+    }
+
+	public int getTotalFriends()
+    {
+		return totalFriends;
     }
 }

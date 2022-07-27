@@ -11,8 +11,8 @@ public class StageOfLife : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		//string[] Stage = { "Kindergarten", "Elementary", "Home School", "Highschool" }; //List of which stages of life is load from. 
-		string[] Stage = {"Apprentice", "Cultist", "Prophet", "Saint" };
+		string[] Stage = { "Toddler", "Adolecense", "Young Adult", "Adult", "Elder" }; //List of which stages of life is load from. 
+		//string[] Stage = {"Apprentice", "Cultist", "Prophet", "Saint" };
 		if (collision.CompareTag("Player"))
 		{
 			int i = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().getStageOfLife();//Get current stage of life from player

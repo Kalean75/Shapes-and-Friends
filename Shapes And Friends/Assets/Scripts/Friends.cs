@@ -39,6 +39,7 @@ public class Friends : MonoBehaviour
 	//used for shape
 	int shapeSpawnID;
 	int shapeID;
+	bool hasLeft;
 
 	// Start is called before the first frame update
 	void Start()
@@ -48,7 +49,7 @@ public class Friends : MonoBehaviour
 		SetRandomShape(Random.Range(0, shapes.Count - 1));
 		//sets timer between min and max range where friend leaves
 		fickleFriendTimer = Random.Range(fickleFriendTimerMin, fickleFriendTimerMax);
-
+		hasLeft = false;
 	}
 
 	// Update is called once per frame
@@ -72,8 +73,16 @@ public class Friends : MonoBehaviour
 			{
 				//temp change later
 				transform.position += new Vector3(friendSpeed * Time.deltaTime, friendSpeed * Time.deltaTime, 0);
+				if (hasLeft == false)
+                {
+					GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().removeFriend();
+					hasLeft = true;
+
+				}
+				
 				//transform.position += this.transform.forward * Time.deltaTime * friendSpeed;
 			}
+				
 			//if not 0 continue following
 			else
 			{
@@ -122,6 +131,7 @@ public class Friends : MonoBehaviour
 			{
 				following = true;
 				playSparkle();
+				GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().addFriend();
 			}
 			else if (this.attractionID != playerAttractionId || this.shapeID != playerShapeAttractionId)
 			{
