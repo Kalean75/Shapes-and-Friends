@@ -9,7 +9,7 @@ public class Shredder : MonoBehaviour
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		//removes gameobject from game
-		if(collision.CompareTag("Friend"))
+		if(!collision.CompareTag("Player"))
 		{
 			Destroy(collision.gameObject);
 			/*if (GameObject.FindGameObjectWithTag("Spawner").GetComponent<FriendSpawner>().getCurrentlySpawnedFriends() > 0)
