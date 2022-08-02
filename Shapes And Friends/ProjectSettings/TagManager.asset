@@ -8,6 +8,7 @@ TagManager:
   - Spawner
   - NPC
   - Background
+  - UI
   layers:
   - Default
   - TransparentFX
