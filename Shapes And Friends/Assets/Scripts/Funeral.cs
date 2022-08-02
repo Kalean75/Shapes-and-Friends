@@ -13,17 +13,13 @@ public class Funeral : MonoBehaviour
     {
 		getTotalFriends();
     }
-	private void OnTriggerEnter2D(Collider2D collision)
+	void Update()
 	{
-		if (collision.CompareTag("Player"))
-		{
-			totalFriends = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().getTotalFriends();
-			SceneManager.LoadScene(2);
-		}
+		totalFriends = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().getTotalFriends();
 	}
 
 	public void getTotalFriends()
     {
-		textBox.text = totalFriends.ToString();
+		textBox.text = "You made " + totalFriends.ToString() + " friends";
     }
 }
