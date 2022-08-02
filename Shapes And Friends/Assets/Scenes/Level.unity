@@ -243,7 +243,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8033703745960469752, guid: e3f7d56b7c49f7f41a80fdc239185a94, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.72
+      value: 9.3
       objectReference: {fileID: 0}
     - target: {fileID: 8033703745960469752, guid: e3f7d56b7c49f7f41a80fdc239185a94, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4380,7 +4380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8033703745960469752, guid: e3f7d56b7c49f7f41a80fdc239185a94, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.8289995
+      value: -8.5
       objectReference: {fileID: 0}
     - target: {fileID: 8033703745960469752, guid: e3f7d56b7c49f7f41a80fdc239185a94, type: 3}
       propertyPath: m_LocalPosition.y
@@ -15143,7 +15143,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8033703745960469752, guid: e3f7d56b7c49f7f41a80fdc239185a94, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.1120005
+      value: 3.8
       objectReference: {fileID: 0}
     - target: {fileID: 8033703745960469752, guid: e3f7d56b7c49f7f41a80fdc239185a94, type: 3}
       propertyPath: m_LocalPosition.y
@@ -15868,7 +15868,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7c89620b16e5224fb021936e55b5859, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: -0.065
+  scrollSpeed: -0.0625
   scroll: 1
   loop: 0
 --- !u!4 &1801583072 stripped

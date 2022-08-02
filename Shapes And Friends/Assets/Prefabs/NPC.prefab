@@ -36,6 +36,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 4d0819b84768a7f41977160f0e011575, type: 3}
     - target: {fileID: 587895308569183190, guid: 62a86d1f419361f439d59d3759025328, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 587895308569183190, guid: 62a86d1f419361f439d59d3759025328, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
