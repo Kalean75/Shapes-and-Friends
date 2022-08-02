@@ -22,4 +22,11 @@ public class Funeral : MonoBehaviour
     {
 		textBox.text = "You made " + totalFriends.ToString() + " friends";
     }
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		if(collision.CompareTag("Player"))
+		{
+			SceneManager.LoadScene(2);
+		}
+	}
 }
