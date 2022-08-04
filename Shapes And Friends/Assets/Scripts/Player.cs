@@ -104,38 +104,6 @@ public class Player : MonoBehaviour
 		int randomNum = Random.Range(0, colors.Count - 1);
 		playerSprite.color = colors[randomNum];
 		attractionID = randomNum;
-		//Set the GameObject's Color quickly to a set Color (blue)
-		/*switch (randomNum)
-		{
-			case 1:
-				playerSprite.color = Color.red;
-				attractionID = 1;
-				break;
-			case 2:
-				playerSprite.color = Color.green;
-				attractionID = 2;
-				break;
-			case 3:
-				playerSprite.color = Color.blue;
-				attractionID = 3;
-				break;
-			case 4:
-				playerSprite.color = Color.cyan;
-				attractionID = 4;
-				break;
-			case 5:
-				playerSprite.color = Color.yellow;
-				attractionID = 5;
-				break;
-			case 6:
-				playerSprite.color = Color.magenta;
-				attractionID = 6;
-				break;
-			default:
-				playerSprite.color = Color.black;
-				attractionID = 7;
-				break;
-		}*/
 	}
 	/// <summary>
 	/// gets the attraction id for use in repulsion or attraction.

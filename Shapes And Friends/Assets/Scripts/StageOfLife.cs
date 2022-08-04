@@ -44,7 +44,6 @@ public class StageOfLife : MonoBehaviour
 				SceneManager.LoadScene(2);
             }
 			moving = true;
-			Debug.Log(i.ToString());
 			next = true;
 		}
 	}

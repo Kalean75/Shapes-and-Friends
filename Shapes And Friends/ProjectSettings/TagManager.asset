@@ -9,6 +9,7 @@ TagManager:
   - NPC
   - Background
   - UI
+  - MainBG
   layers:
   - Default
   - TransparentFX

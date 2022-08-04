@@ -29,41 +29,6 @@ public class FriendSpawner : MonoBehaviour
             spawnTimer = Random.Range(minSpawnRate, maxSpawnRate);
             //Debug.Log(currentlySpawnedFriends);
         }
-        /*if (currentlySpawnedFriends <= MaxSpawnedFriends)
-        {
-            spawnTimer -= Time.deltaTime;
-            //Debug.Log(spawnTimer);
-            if (spawnTimer <= 0f)
-			{
-                Instantiate(friend, new Vector3(spawner.transform.position.x, spawner.transform.position.y, spawner.transform.position.z), Quaternion.identity);
-                incrementCurrentlySpawnedFriends();
-                spawnTimer = Random.Range(1, spawnRate);
-                Debug.Log(currentlySpawnedFriends);
-            }
-        }*/
+      
     }
-    /// <summary>
-    /// gets the number of friends that are currently spawned by the spawner
-    /// </summary>
-    /// <returns>returns the number of currently spawned friends</returns>
-    /*public int getCurrentlySpawnedFriends()
-	{
-        return currentlySpawnedFriends;
-	}
-    /// <summary>
-    /// increments the number of spawned friends by 1
-    /// </summary>
-    /// 
-
-    public void incrementCurrentlySpawnedFriends()
-	{
-        currentlySpawnedFriends++;
-	}
-    /// <summary>
-    /// decrements the number of currently spawned friends by 1
-    /// </summary>
-    public void decrementCurrentlySpawnedFriends()
-    {
-        currentlySpawnedFriends--;
-    }*/
 }

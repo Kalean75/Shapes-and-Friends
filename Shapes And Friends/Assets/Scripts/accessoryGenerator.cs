@@ -11,7 +11,7 @@ public class accessoryGenerator : MonoBehaviour
     void Start()
     {
         accessory = GetComponent<SpriteRenderer>();
-        generateAccesory(Random.Range(0, accessories.Count - 1));
+        generateAccesory(Random.Range(0, accessories.Count));
     }
 
     // Update is called once per frame
