@@ -58,6 +58,9 @@ public class FriendSpawner : MonoBehaviour
 			case 4:
 				spawnTimer = Random.Range(adolescentSpawnTimer, adultSpawnTimer);
 				break;
+			case 5:
+				spawnTimer = 10000f;
+				break;
 			default:
 				break;
 		}

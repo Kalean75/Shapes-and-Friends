@@ -21,6 +21,7 @@ public class StageOfLife : MonoBehaviour
     {
         if (moving)
         {
+			scrollSpeed = GameObject.FindGameObjectWithTag("MainBG").GetComponent<Scroller>().getScrollSpeed();
 			transform.position += new Vector3((0.0625f*scrollSpeed) * Time.deltaTime, 0);
 			GetComponent<SpriteRenderer>().color = Color.Lerp(GetComponent<SpriteRenderer>().color, Color.white, Time.deltaTime * 1);
 			if (next)
@@ -33,7 +34,6 @@ public class StageOfLife : MonoBehaviour
 	}
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		scrollSpeed = GameObject.FindGameObjectWithTag("MainBG").GetComponent<Scroller>().getScrollSpeed();
 		string[] Stage = { "Childhood", "Adolecense", "Young Adulthood", "Adulthood", "Elder","Death" }; //List of which stages of life is load from.
 		
 		//string[] Stage = {"Apprentice", "Cultist", "Prophet", "Saint" };
