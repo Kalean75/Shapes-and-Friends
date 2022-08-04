@@ -90,7 +90,7 @@ public class Friends : MonoBehaviour
 			//if not 0 continue following
 			else
 			{
-				Vector2 target = new Vector2(player.transform.position.x - followDistance - offset, GameObject.FindGameObjectWithTag("Player").transform.position.y);
+				Vector2 target = new Vector2(player.transform.position.x - followDistance, GameObject.FindGameObjectWithTag("Player").transform.position.y);
 				Vector2 newPos = Vector2.MoveTowards(transform.position, target , friendSpeed * Time.deltaTime);
 				transform.position = newPos;
 				fickleFriendTimer -= Time.deltaTime;
