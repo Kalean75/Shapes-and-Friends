@@ -10,16 +10,18 @@ public class StageOfLife : MonoBehaviour
 	public new GameObject collider;
 	private bool moving;
 	private bool next;
+	float scrollSpeed;
 	void Start()
     {
 		moving = false;
 		next = false;
+		scrollSpeed = GameObject.FindGameObjectWithTag("MainBG").GetComponent<Scroller>().getScrollSpeed();
 	}
 	void Update()
     {
         if (moving)
         {
-			transform.position += new Vector3(0.0625f * Time.deltaTime, 0);
+			transform.position += new Vector3((0.0625f*scrollSpeed) * Time.deltaTime, 0);
 			GetComponent<SpriteRenderer>().color = Color.Lerp(GetComponent<SpriteRenderer>().color, Color.white, Time.deltaTime * 1);
 			if (next)
 			{

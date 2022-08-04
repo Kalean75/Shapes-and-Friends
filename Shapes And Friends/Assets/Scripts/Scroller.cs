@@ -3,7 +3,7 @@ using UnityEngine;
 public class Scroller : MonoBehaviour
 {
 	//serializeField makes the value editable within unity if clicking on object
-	[SerializeField] float scrollSpeed = 5f;
+	[SerializeField][Range(1,3)] float scrollSpeed = 1f;
 
 	//testing purposes remove later
 	[SerializeField] bool scroll = true;

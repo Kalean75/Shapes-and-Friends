@@ -29,6 +29,7 @@ public class Friends : MonoBehaviour
 	int attractionID;
 	//the spriterenderer of friend
 	SpriteRenderer friendSprite;
+	GameObject player;
 	//Vector2 playerPosition;
 	bool following = false;
 	bool repel = false;
@@ -40,10 +41,13 @@ public class Friends : MonoBehaviour
 	int shapeSpawnID;
 	int shapeID;
 	bool hasLeft;
+	float offset;
 
 	// Start is called before the first frame update
 	void Start()
 	{
+		player = GameObject.FindGameObjectWithTag("Player");
+		offset = (player.GetComponent<Player>().getCurrentNumberofFriends() * 1f);
 		//SetRandomColor();
 		colorID = Random.Range(0, colors.Count - 1);
 		SetRandomShape(Random.Range(0, shapes.Count - 1));
@@ -86,7 +90,7 @@ public class Friends : MonoBehaviour
 			//if not 0 continue following
 			else
 			{
-				Vector2 target = new Vector2(GameObject.FindGameObjectWithTag("Player").transform.position.x - followDistance, GameObject.FindGameObjectWithTag("Player").transform.position.y);
+				Vector2 target = new Vector2(player.transform.position.x - followDistance - offset, GameObject.FindGameObjectWithTag("Player").transform.position.y - offset);
 				Vector2 newPos = Vector2.MoveTowards(transform.position, target , friendSpeed * Time.deltaTime);
 				transform.position = newPos;
 				fickleFriendTimer -= Time.deltaTime;
