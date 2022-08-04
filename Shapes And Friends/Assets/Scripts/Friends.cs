@@ -90,7 +90,7 @@ public class Friends : MonoBehaviour
 			//if not 0 continue following
 			else
 			{
-				Vector2 target = new Vector2(player.transform.position.x - followDistance - offset, GameObject.FindGameObjectWithTag("Player").transform.position.y - offset);
+				Vector2 target = new Vector2(player.transform.position.x - followDistance - offset, GameObject.FindGameObjectWithTag("Player").transform.position.y);
 				Vector2 newPos = Vector2.MoveTowards(transform.position, target , friendSpeed * Time.deltaTime);
 				transform.position = newPos;
 				fickleFriendTimer -= Time.deltaTime;
@@ -106,7 +106,7 @@ public class Friends : MonoBehaviour
 		//if not collided move to left
 		if (!repel && !following)
 		{
-			transform.position += new Vector3(-friendSpeed * Time.deltaTime, 0);
+			transform.position += new Vector3(-(GameObject.FindGameObjectWithTag("MainBG").GetComponent<Scroller>().getScrollSpeed() + friendSpeed) * Time.deltaTime, 0);
 		}
 	}
 
@@ -126,11 +126,6 @@ public class Friends : MonoBehaviour
 			//access player script to get public variables
 			int playerAttractionId = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().getAttractionID();
 			int playerShapeAttractionId = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().getShapeID();
-			/*if (GameObject.FindGameObjectWithTag("Spawner").GetComponent<FriendSpawner>().getCurrentlySpawnedFriends() > 0)
-			{
-				GameObject.FindGameObjectWithTag("Spawner").GetComponent<FriendSpawner>().decrementCurrentlySpawnedFriends();
-			}*/
-
 			if (this.attractionID == playerAttractionId || this.shapeID == playerShapeAttractionId)
 			{
 				following = true;
@@ -180,6 +175,9 @@ public class Friends : MonoBehaviour
 				break;
 			case string when shapeName.Contains("agon"):
 				shapeID = 3;
+				break;
+			case string when shapeName.Contains("circle"):
+				shapeID = 4;
 				break;
 		}
 	}

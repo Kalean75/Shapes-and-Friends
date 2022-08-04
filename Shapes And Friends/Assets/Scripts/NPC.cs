@@ -26,7 +26,7 @@ public class NPC : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		moveNPC(scrollSpeed);
+		moveNPC(GameObject.FindGameObjectWithTag("MainBG").GetComponent<Scroller>().getScrollSpeed());
 	}
 
 	private void moveNPC(float scrollSpeed)
@@ -67,15 +67,6 @@ public class NPC : MonoBehaviour
 	{
 		npcSprite.sprite = shapes[shapeSpawnID];
 		string shapeName = npcSprite.sprite.name.ToLower();
-		switch (shapeName)
-		{
-			case string when shapeName.Contains("square"):
-				break;
-			case string when shapeName.Contains("triangle"):
-				break;
-			case string when shapeName.Contains("agon"):
-				break;
-		}
 	}
 
 }

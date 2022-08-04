@@ -33,6 +33,7 @@ public class StageOfLife : MonoBehaviour
 	}
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
+		scrollSpeed = GameObject.FindGameObjectWithTag("MainBG").GetComponent<Scroller>().getScrollSpeed();
 		string[] Stage = { "Childhood", "Adolecense", "Young Adulthood", "Adulthood", "Elder","Death" }; //List of which stages of life is load from.
 		
 		//string[] Stage = {"Apprentice", "Cultist", "Prophet", "Saint" };
@@ -43,6 +44,7 @@ public class StageOfLife : MonoBehaviour
 			
 			if (i > 4)
             {
+				scrollSpeed = 0.0125f;
 				SceneManager.LoadScene(2);
             }
 			moving = true;

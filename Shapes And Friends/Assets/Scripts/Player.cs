@@ -61,6 +61,9 @@ public class Player : MonoBehaviour
 			case string when shapeName.Contains("agon"):
 				shapeID = 3;
 				break;
+			case string when shapeName.Contains("circle"):
+				shapeID = 4;
+				break;
 		}
 	}
 
