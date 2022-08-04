@@ -510,15 +510,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2214141479590440290, guid: 6080f38b9dabe2f4ebd8eaa7c5931792, type: 3}
       propertyPath: m_Name
-      value: SpawnerTest (2)
+      value: Spawner(2)
       objectReference: {fileID: 0}
     - target: {fileID: 2214141479590440291, guid: 6080f38b9dabe2f4ebd8eaa7c5931792, type: 3}
       propertyPath: spawnRate
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2214141479590440291, guid: 6080f38b9dabe2f4ebd8eaa7c5931792, type: 3}
+      propertyPath: minSpawnRate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214141479590440291, guid: 6080f38b9dabe2f4ebd8eaa7c5931792, type: 3}
+      propertyPath: adultSpawnTimer
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214141479590440291, guid: 6080f38b9dabe2f4ebd8eaa7c5931792, type: 3}
       propertyPath: MaxSpawnedFriends
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214141479590440291, guid: 6080f38b9dabe2f4ebd8eaa7c5931792, type: 3}
+      propertyPath: childHoodSpawnTimer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214141479590440291, guid: 6080f38b9dabe2f4ebd8eaa7c5931792, type: 3}
+      propertyPath: adolescentSpawnTimer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214141479590440291, guid: 6080f38b9dabe2f4ebd8eaa7c5931792, type: 3}
+      propertyPath: youngAdultSpawnTimer
+      value: 28
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6080f38b9dabe2f4ebd8eaa7c5931792, type: 3}
@@ -615,15 +635,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2214141479590440290, guid: 6080f38b9dabe2f4ebd8eaa7c5931792, type: 3}
       propertyPath: m_Name
-      value: SpawnerTest (3)
+      value: Spawner(3)
       objectReference: {fileID: 0}
     - target: {fileID: 2214141479590440291, guid: 6080f38b9dabe2f4ebd8eaa7c5931792, type: 3}
       propertyPath: spawnRate
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2214141479590440291, guid: 6080f38b9dabe2f4ebd8eaa7c5931792, type: 3}
+      propertyPath: minSpawnRate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214141479590440291, guid: 6080f38b9dabe2f4ebd8eaa7c5931792, type: 3}
+      propertyPath: adultSpawnTimer
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214141479590440291, guid: 6080f38b9dabe2f4ebd8eaa7c5931792, type: 3}
       propertyPath: MaxSpawnedFriends
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214141479590440291, guid: 6080f38b9dabe2f4ebd8eaa7c5931792, type: 3}
+      propertyPath: childHoodSpawnTimer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214141479590440291, guid: 6080f38b9dabe2f4ebd8eaa7c5931792, type: 3}
+      propertyPath: adolescentSpawnTimer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214141479590440291, guid: 6080f38b9dabe2f4ebd8eaa7c5931792, type: 3}
+      propertyPath: youngAdultSpawnTimer
+      value: 28
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6080f38b9dabe2f4ebd8eaa7c5931792, type: 3}
@@ -720,7 +760,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2214141479590440290, guid: 6080f38b9dabe2f4ebd8eaa7c5931792, type: 3}
       propertyPath: m_Name
-      value: SpawnerTest (1)
+      value: Spawner(1)
       objectReference: {fileID: 0}
     - target: {fileID: 2214141479590440291, guid: 6080f38b9dabe2f4ebd8eaa7c5931792, type: 3}
       propertyPath: spawnRate
@@ -732,11 +772,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2214141479590440291, guid: 6080f38b9dabe2f4ebd8eaa7c5931792, type: 3}
       propertyPath: minSpawnRate
-      value: 1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214141479590440291, guid: 6080f38b9dabe2f4ebd8eaa7c5931792, type: 3}
+      propertyPath: adultSpawnTimer
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2214141479590440291, guid: 6080f38b9dabe2f4ebd8eaa7c5931792, type: 3}
       propertyPath: MaxSpawnedFriends
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214141479590440291, guid: 6080f38b9dabe2f4ebd8eaa7c5931792, type: 3}
+      propertyPath: childHoodSpawnTimer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214141479590440291, guid: 6080f38b9dabe2f4ebd8eaa7c5931792, type: 3}
+      propertyPath: adolescentSpawnTimer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214141479590440291, guid: 6080f38b9dabe2f4ebd8eaa7c5931792, type: 3}
+      propertyPath: youngAdultSpawnTimer
+      value: 28
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6080f38b9dabe2f4ebd8eaa7c5931792, type: 3}
@@ -885,6 +941,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1177400706 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2577907489063893902, guid: de742d998bc3f8a479c868f92668cd22, type: 3}
+  m_PrefabInstance: {fileID: 4209182309992306626}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1228273235 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 867943317009339049, guid: da8cec96fb220a64199ea875e3434ea2, type: 3}
@@ -900,6 +961,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2214141479590440289, guid: 6080f38b9dabe2f4ebd8eaa7c5931792, type: 3}
   m_PrefabInstance: {fileID: 810684580}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1654847276 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4209182309337225829, guid: de742d998bc3f8a479c868f92668cd22, type: 3}
+  m_PrefabInstance: {fileID: 4209182309992306626}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1656124840 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2214141479590440289, guid: 6080f38b9dabe2f4ebd8eaa7c5931792, type: 3}
@@ -1126,7 +1198,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2214141479590440290, guid: 6080f38b9dabe2f4ebd8eaa7c5931792, type: 3}
       propertyPath: m_Name
-      value: SpawnerTest
+      value: Spawner
       objectReference: {fileID: 0}
     - target: {fileID: 2214141479590440291, guid: 6080f38b9dabe2f4ebd8eaa7c5931792, type: 3}
       propertyPath: friend
@@ -1137,8 +1209,28 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2214141479590440291, guid: 6080f38b9dabe2f4ebd8eaa7c5931792, type: 3}
+      propertyPath: minSpawnRate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214141479590440291, guid: 6080f38b9dabe2f4ebd8eaa7c5931792, type: 3}
+      propertyPath: adultSpawnTimer
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214141479590440291, guid: 6080f38b9dabe2f4ebd8eaa7c5931792, type: 3}
       propertyPath: MaxSpawnedFriends
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214141479590440291, guid: 6080f38b9dabe2f4ebd8eaa7c5931792, type: 3}
+      propertyPath: childHoodSpawnTimer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214141479590440291, guid: 6080f38b9dabe2f4ebd8eaa7c5931792, type: 3}
+      propertyPath: adolescentSpawnTimer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214141479590440291, guid: 6080f38b9dabe2f4ebd8eaa7c5931792, type: 3}
+      propertyPath: youngAdultSpawnTimer
+      value: 28
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6080f38b9dabe2f4ebd8eaa7c5931792, type: 3}
@@ -1306,6 +1398,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -21
       objectReference: {fileID: 0}
+    - target: {fileID: 8296889173544979923, guid: de742d998bc3f8a479c868f92668cd22, type: 3}
+      propertyPath: textBox
+      value: 
+      objectReference: {fileID: 1654847276}
+    - target: {fileID: 8296889173544979923, guid: de742d998bc3f8a479c868f92668cd22, type: 3}
+      propertyPath: collider
+      value: 
+      objectReference: {fileID: 1177400706}
     m_RemovedComponents:
     - {fileID: 4209182308260627942, guid: de742d998bc3f8a479c868f92668cd22, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: de742d998bc3f8a479c868f92668cd22, type: 3}
@@ -1316,13 +1416,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5630877729488553840, guid: 6373304c2d396fd43990ada0f4b8628c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5630877729488553841, guid: 6373304c2d396fd43990ada0f4b8628c, type: 3}
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5630877729488553841, guid: 6373304c2d396fd43990ada0f4b8628c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 349.97
+      value: 349.8
       objectReference: {fileID: 0}
     - target: {fileID: 5630877729488553841, guid: 6373304c2d396fd43990ada0f4b8628c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1427,7 +1531,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6033911346851964942, guid: 021ecf9a1299526468c66e6850b832fb, type: 3}
       propertyPath: scrollSpeed
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 021ecf9a1299526468c66e6850b832fb, type: 3}
