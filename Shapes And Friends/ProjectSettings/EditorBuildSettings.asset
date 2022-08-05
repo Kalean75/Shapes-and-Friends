@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Funeral.unity
     guid: 0d930ab503125d7469f4685b945642b4
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 6637af0893907ef4792bbf994154a9d0
   m_configObjects: {}

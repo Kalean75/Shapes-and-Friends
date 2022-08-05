@@ -14,6 +14,6 @@ public class infantScroll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += new Vector3((0.0625f * scrollSpeed) * Time.deltaTime, 0);
+        transform.position += new Vector3((0.040f * scrollSpeed) * Time.deltaTime, 0);
     }
 }

@@ -14,7 +14,7 @@ public class StageOfLife : MonoBehaviour
 	float iconSpeed;
 	void Start()
     {
-		iconSpeed = 0.056f;
+		iconSpeed = 0.050f;
 		moving = false;
 		next = false;
 		scrollSpeed = GameObject.FindGameObjectWithTag("MainBG").GetComponent<Scroller>().getScrollSpeed();
@@ -45,7 +45,7 @@ public class StageOfLife : MonoBehaviour
 			textBox.text = Stage[i];
 			if(i == 3)
 			{
-				iconSpeed = 0.050f;
+				iconSpeed = 0.045f;
 			}
 			if(i == 4)
 			{
