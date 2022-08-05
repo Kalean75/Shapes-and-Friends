@@ -32,7 +32,10 @@ public class Player : MonoBehaviour
 
 	//These are the values that the Color Sliders return
 	//float m_Red, m_Blue, m_Green;
-
+	void Awake()
+	{
+		DontDestroyOnLoad(gameObject);
+	}
 	// Start is called before the first frame update
 	void Start()
 	{

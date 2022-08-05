@@ -8,22 +8,20 @@ public class Funeral : MonoBehaviour
 {
 	public static int totalFriends;
 	public TextMeshProUGUI textBox;
-	[SerializeField] float Creditstimer = 20f;
+	[SerializeField] float Creditstimer;
 	// Update is called once per frame
 	void Start()
     {
+		Creditstimer = 20f;
+		totalFriends = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().getTotalFriends();
 		getTotalFriends();
-    }
+	}
 	void Update()
 	{
 		Creditstimer -= Time.deltaTime;
 		if (Creditstimer <= 0)
 		{
 			SceneManager.LoadScene(4);
-		}
-		if (GameObject.FindGameObjectWithTag("Player"))
-		{
-			totalFriends = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().getTotalFriends();
 		}
 	}
 

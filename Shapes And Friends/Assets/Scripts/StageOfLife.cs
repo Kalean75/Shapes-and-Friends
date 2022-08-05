@@ -24,7 +24,7 @@ public class StageOfLife : MonoBehaviour
         if (moving)
         {
 			scrollSpeed = GameObject.FindGameObjectWithTag("MainBG").GetComponent<Scroller>().getScrollSpeed();
-			transform.position += new Vector3((iconSpeed*scrollSpeed) * Time.deltaTime, 0);
+			transform.position += new Vector3((iconSpeed*scrollSpeed)*Time.deltaTime, 0);
 			GetComponent<SpriteRenderer>().color = Color.Lerp(GetComponent<SpriteRenderer>().color, Color.white, Time.deltaTime * 1);
 			if (next)
 			{
