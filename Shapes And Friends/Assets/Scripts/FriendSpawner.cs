@@ -6,9 +6,9 @@ public class FriendSpawner : MonoBehaviour
 {
     //[SerializeField] float maxSpawnRate = 100f;
     //[SerializeField] float minSpawnRate = 10f;
-    [SerializeField] float childHoodSpawnTimer = 2f;
-    [SerializeField] float adolescentSpawnTimer = 5f;
-    [SerializeField] float youngAdultSpawnTimer = 10f;
+    [SerializeField] float childHoodSpawnTimer = 1f;
+    [SerializeField] float adolescentSpawnTimer = 3f;
+    [SerializeField] float youngAdultSpawnTimer = 8f;
     [SerializeField] float adultSpawnTimer = 30f;
     float spawnTimer;
     //[SerializeField] int MaxSpawnedFriends = 1;
@@ -26,7 +26,7 @@ public class FriendSpawner : MonoBehaviour
     void Update()
 	{
 		int i = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().getStageOfLife();
-		if (i > 0)
+		if (i > 0 && i < 4)
 		{
 			spawnTimer -= Time.deltaTime;
 		}
@@ -47,19 +47,16 @@ public class FriendSpawner : MonoBehaviour
 		switch (i)
 		{
 			case 1:
-				spawnTimer = Random.Range(0, childHoodSpawnTimer);
+				spawnTimer = Random.Range(childHoodSpawnTimer, adolescentSpawnTimer);
 				break;
 			case 2:
-				spawnTimer = Random.Range(childHoodSpawnTimer,adolescentSpawnTimer);
-				break;
-			case 3:
 				spawnTimer = Random.Range(adolescentSpawnTimer, youngAdultSpawnTimer);
 				break;
-			case 4:
+			case 3:
 				spawnTimer = Random.Range(youngAdultSpawnTimer, adultSpawnTimer);
 				break;
-			case 5:
-				spawnTimer = 100000000f;
+			case 4:
+				spawnTimer = 10000f;
 				break;
 			default:
 				break;
