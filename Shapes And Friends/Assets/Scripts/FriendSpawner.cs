@@ -5,7 +5,7 @@ using UnityEngine;
 public class FriendSpawner : MonoBehaviour
 {
     //[SerializeField] float maxSpawnRate = 100f;
-    [SerializeField] float minSpawnRate = 10f;
+    //[SerializeField] float minSpawnRate = 10f;
     [SerializeField] float childHoodSpawnTimer = 2f;
     [SerializeField] float adolescentSpawnTimer = 5f;
     [SerializeField] float youngAdultSpawnTimer = 10f;

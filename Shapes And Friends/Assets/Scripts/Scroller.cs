@@ -25,6 +25,10 @@ public class Scroller : MonoBehaviour
 			{
 				transform.position += new Vector3(-scrollSpeed * Time.deltaTime, 0);
 			}
+			else
+			{
+				scroll = false;
+			}
 
 			if (loop)
 			{
