@@ -10,7 +10,6 @@ public class QuitGameFuneral : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
-            Debug.Log("Quit");
         }
     }
 }
