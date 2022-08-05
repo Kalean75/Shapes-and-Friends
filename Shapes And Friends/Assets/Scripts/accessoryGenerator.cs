@@ -21,7 +21,7 @@ public class accessoryGenerator : MonoBehaviour
     }
     private void generateAccesory(int index)
     {
-        if(index <= accessories.Count)
+        if(index < accessories.Count)
 		{
             accessory.sprite = accessories[index];
         }

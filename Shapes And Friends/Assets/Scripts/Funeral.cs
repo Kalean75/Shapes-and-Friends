@@ -15,7 +15,7 @@ public class Funeral : MonoBehaviour
     }
 	void Update()
 	{
-		if(GameObject.FindGameObjectWithTag("Player").GetComponent<Player>() != null)
+		if(GameObject.Find("Player"))
 		{
 			totalFriends = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().getTotalFriends();
 		}

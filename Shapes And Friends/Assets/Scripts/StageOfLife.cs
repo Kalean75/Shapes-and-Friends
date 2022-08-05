@@ -49,11 +49,10 @@ public class StageOfLife : MonoBehaviour
 			}
 			if(i == 4)
 			{
-				iconSpeed = 0.02f;
+				iconSpeed = 0.03f;
 			}
 			if (i > 4)
             {
-				scrollSpeed = 0.0125f;
 				SceneManager.LoadScene(2);
             }
 			moving = true;
