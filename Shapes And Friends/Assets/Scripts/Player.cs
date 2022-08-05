@@ -27,14 +27,19 @@ public class Player : MonoBehaviour
 	private int currentNumberofFriends;
 	private int totalFriends;
 	SpriteRenderer playerSprite;
-	//The Color to be assigned to the Renderer’s Material
-	//Color m_NewColor;
-
-	//These are the values that the Color Sliders return
-	//float m_Red, m_Blue, m_Green;
+	private static Player playerInstance;
 	void Awake()
 	{
 		DontDestroyOnLoad(gameObject);
+
+		if (playerInstance == null)
+		{
+			playerInstance = this;
+		}
+		else
+		{
+			Object.Destroy(gameObject);
+		}
 	}
 	// Start is called before the first frame update
 	void Start()
