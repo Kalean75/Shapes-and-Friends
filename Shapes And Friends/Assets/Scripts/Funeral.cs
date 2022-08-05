@@ -16,14 +16,14 @@ public class Funeral : MonoBehaviour
     }
 	void Update()
 	{
-		if(GameObject.Find("Player"))
-		{
-			totalFriends = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().getTotalFriends();
-		}
 		Creditstimer -= Time.deltaTime;
-		if(Creditstimer <= 0)
+		if (Creditstimer <= 0)
 		{
 			SceneManager.LoadScene(4);
+		}
+		if (GameObject.FindGameObjectWithTag("Player"))
+		{
+			totalFriends = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().getTotalFriends();
 		}
 	}
 
