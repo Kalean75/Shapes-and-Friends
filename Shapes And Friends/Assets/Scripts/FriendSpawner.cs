@@ -19,7 +19,7 @@ public class FriendSpawner : MonoBehaviour
     void Start()
     {
 		//spawnTimer = Random.Range(minSpawnRate, maxSpawnRate);
-		spawnTimer = Random.Range(minSpawnRate, childHoodSpawnTimer);
+		spawnTimer = Random.Range(0, childHoodSpawnTimer);
 	}
 
     // Update is called once per frame
@@ -47,7 +47,7 @@ public class FriendSpawner : MonoBehaviour
 		switch (i)
 		{
 			case 1:
-				spawnTimer = Random.Range(minSpawnRate, childHoodSpawnTimer);
+				spawnTimer = Random.Range(0, childHoodSpawnTimer);
 				break;
 			case 2:
 				spawnTimer = Random.Range(childHoodSpawnTimer,adolescentSpawnTimer);
@@ -56,10 +56,10 @@ public class FriendSpawner : MonoBehaviour
 				spawnTimer = Random.Range(adolescentSpawnTimer, youngAdultSpawnTimer);
 				break;
 			case 4:
-				spawnTimer = Random.Range(adolescentSpawnTimer, adultSpawnTimer);
+				spawnTimer = Random.Range(youngAdultSpawnTimer, adultSpawnTimer);
 				break;
 			case 5:
-				spawnTimer = 10000f;
+				spawnTimer = 100000000f;
 				break;
 			default:
 				break;
