@@ -1302,6 +1302,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4209182308134152010, guid: de742d998bc3f8a479c868f92668cd22, type: 3}
+      propertyPath: m_fontColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4209182308134152010, guid: de742d998bc3f8a479c868f92668cd22, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 4209182308134152011, guid: de742d998bc3f8a479c868f92668cd22, type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4209182308135175089, guid: de742d998bc3f8a479c868f92668cd22, type: 3}
       propertyPath: m_Camera
       value: 
@@ -1491,7 +1503,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6033911346851964941, guid: 021ecf9a1299526468c66e6850b832fb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 78.3
+      value: 81.1
       objectReference: {fileID: 0}
     - target: {fileID: 6033911346851964941, guid: 021ecf9a1299526468c66e6850b832fb, type: 3}
       propertyPath: m_LocalPosition.y

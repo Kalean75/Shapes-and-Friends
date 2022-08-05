@@ -58,7 +58,7 @@ public class Scroller : MonoBehaviour
 			case 5:
 				return originalScrollSpeed;
 			default:
-				return originalScrollSpeed;
+				return originalScrollSpeed + 0.25f;
 
 		}
 	}
