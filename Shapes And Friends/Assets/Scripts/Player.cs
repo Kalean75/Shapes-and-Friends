@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
 	/// </summary>
 	private void SetRandomShape()
 	{
-		shapeSpawnID = Random.Range(0, shapes.Count - 1);
+		shapeSpawnID = Random.Range(0, shapes.Count);
 		playerSprite = GetComponent<SpriteRenderer>();
 		playerSprite.sprite = shapes[shapeSpawnID];
 		string shapeName = playerSprite.sprite.name.ToLower();
@@ -104,7 +104,7 @@ public class Player : MonoBehaviour
 	/// </summary>
 	private void SetRandomColor()
 	{
-		int randomNum = Random.Range(0, colors.Count - 1);
+		int randomNum = Random.Range(0, colors.Count);
 		playerSprite.color = colors[randomNum];
 		attractionID = randomNum;
 	}

@@ -49,8 +49,8 @@ public class Friends : MonoBehaviour
 		player = GameObject.FindGameObjectWithTag("Player");
 		offset = (player.GetComponent<Player>().getCurrentNumberofFriends() * 1f);
 		//SetRandomColor();
-		colorID = Random.Range(0, colors.Count - 1);
-		SetRandomShape(Random.Range(0, shapes.Count - 1));
+		colorID = Random.Range(0, colors.Count);
+		SetRandomShape(Random.Range(0, shapes.Count));
 		//sets timer between min and max range where friend leaves
 		fickleFriendTimer = Random.Range(fickleFriendTimerMin, fickleFriendTimerMax);
 		hasLeft = false;

@@ -115,6 +115,26 @@ PrefabInstance:
       propertyPath: m_TagString
       value: NPC
       objectReference: {fileID: 0}
+    - target: {fileID: 689647804769818403, guid: 62a86d1f419361f439d59d3759025328, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 689647804769818403, guid: 62a86d1f419361f439d59d3759025328, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 917470824808472101, guid: 62a86d1f419361f439d59d3759025328, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 917470824808472101, guid: 62a86d1f419361f439d59d3759025328, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 917470824808472101, guid: 62a86d1f419361f439d59d3759025328, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1454492936724639735, guid: 62a86d1f419361f439d59d3759025328, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -241,6 +261,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3930786268776569708, guid: 62a86d1f419361f439d59d3759025328, type: 3}
       propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5592799105840969140, guid: 62a86d1f419361f439d59d3759025328, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5592799105840969140, guid: 62a86d1f419361f439d59d3759025328, type: 3}
+      propertyPath: m_WasSpriteAssigned
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5641185034849296226, guid: 62a86d1f419361f439d59d3759025328, type: 3}

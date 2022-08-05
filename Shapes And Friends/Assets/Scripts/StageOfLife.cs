@@ -11,8 +11,10 @@ public class StageOfLife : MonoBehaviour
 	private bool moving;
 	private bool next;
 	float scrollSpeed;
+	float iconSpeed;
 	void Start()
     {
+		iconSpeed = 0.056f;
 		moving = false;
 		next = false;
 		scrollSpeed = GameObject.FindGameObjectWithTag("MainBG").GetComponent<Scroller>().getScrollSpeed();
@@ -22,7 +24,7 @@ public class StageOfLife : MonoBehaviour
         if (moving)
         {
 			scrollSpeed = GameObject.FindGameObjectWithTag("MainBG").GetComponent<Scroller>().getScrollSpeed();
-			transform.position += new Vector3((0.0625f*scrollSpeed) * Time.deltaTime, 0);
+			transform.position += new Vector3((iconSpeed*scrollSpeed) * Time.deltaTime, 0);
 			GetComponent<SpriteRenderer>().color = Color.Lerp(GetComponent<SpriteRenderer>().color, Color.white, Time.deltaTime * 1);
 			if (next)
 			{
@@ -41,7 +43,14 @@ public class StageOfLife : MonoBehaviour
 			collider.SetActive(false);//Disable collider prefab
 			int i = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().getStageOfLife();//Get current stage of life from player
 			textBox.text = Stage[i];
-			
+			if(i == 3)
+			{
+				iconSpeed = 0.050f;
+			}
+			if(i == 4)
+			{
+				iconSpeed = 0.02f;
+			}
 			if (i > 4)
             {
 				scrollSpeed = 0.0125f;

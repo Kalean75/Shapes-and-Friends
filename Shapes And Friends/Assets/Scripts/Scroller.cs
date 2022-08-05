@@ -21,10 +21,10 @@ public class Scroller : MonoBehaviour
 		scrollSpeed = changescrollSpeed(i);
 		if (scroll)
 		{
-			//if( i != 5)
-			//{
+			if( i != 5)
+			{
 				transform.position += new Vector3(-scrollSpeed * Time.deltaTime, 0);
-			//}
+			}
 
 			if (loop)
 			{
